@@ -6,7 +6,8 @@ public class Clase1 {
 	
 	public static void main (String[] args ) {
 		int edad = 27;
-		System.out.printIn("Mario Ferron"+edad);
+		System.out.printIn("Mario Ferron"+"8"+edad);
+		System.out.println("test");
 	}
 
 }
