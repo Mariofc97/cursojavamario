@@ -35,28 +35,35 @@ public class Ejercicio3Arrays {
 //			1. Insertar Alumnos -> Va a solicitar el nombre de los alumnos para las aulas que tengan puestos disponibles
 
 				while (true) {
-					boolean HayHueco = false;
+					boolean hayHueco = false;
 
 					for (int i = 0; i < colegio.length; i++) {
 						for (int j = 0; j < colegio[i].length; j++) {
 							if (colegio[i][j] == null) {
-								HayHueco = true;
+								hayHueco = true;
 								break;
 							}
 						}
-						if (HayHueco)
+						if (hayHueco)
 							break;
 
 					}
 
-					if (!HayHueco) {
+					if (!hayHueco) {
 						System.out.println("No hay mas huecos disponibles.");
 						break;
 					}
 
-					boolean AlumnoIngresado = false;
+					boolean alumnoIngresado = false;
+					
+//					BUCLE FOR EACH
+//					for (String [] aula: colegio) {
+//						for (String alumno : aula) {
+//							System.out.print(alumno);
+//						}
+//					}
 
-					for (int i = 0; i < colegio.length && !AlumnoIngresado; i++) {
+					for (int i = 0; i < colegio.length && !alumnoIngresado; i++) {
 						for (int j = 0; j < colegio[i].length; j++) {
 
 							if (colegio[i][j] == null) {
@@ -64,7 +71,7 @@ public class Ejercicio3Arrays {
 								String nombreAlumno = scan.nextLine();
 								colegio[i][j] = nombreAlumno;
 								System.out.println("Alumno ingresado en aula " + i + " en el puesto " + j);
-								AlumnoIngresado = true;
+								alumnoIngresado = true;
 								break;
 							}
 
@@ -115,13 +122,13 @@ public class Ejercicio3Arrays {
 //			4. Borrar Alumno -> Solicitar nombre, y se borra a todos los alumnos que tengan ese nombre. HAY QUE PONERLO A NULL, QUE TENGAMOS EN CUENTA QUE EL VALOR POR DEFECTO ES NULL
 				System.out.println("Has elegido Borrar Alumno");
 				System.out.println("Introduce el alumno que deseas eliminar: ");
-				String AlumnoEliminado = scan.nextLine().toLowerCase();
+				String alumnoEliminado = scan.nextLine().toLowerCase();
 				boolean eliminado = false;
 				for (int i = 0; i < colegio.length; i++) {
 					for (int j = 0; j < colegio[i].length; j++) {
-						if (colegio[i][j] != null && colegio[i][j].toLowerCase().contains(AlumnoEliminado)) {
+						if (colegio[i][j] != null && colegio[i][j].toLowerCase().contains(alumnoEliminado)) {
 							colegio[i][j] = null;
-							System.out.println("\nEl alumno " + AlumnoEliminado + " se ha eliminado correctamente");
+							System.out.println("\nEl alumno " + alumnoEliminado + " se ha eliminado correctamente");
 							eliminado = true;
 							break;
 						}
