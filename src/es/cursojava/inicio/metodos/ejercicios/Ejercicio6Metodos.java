@@ -3,8 +3,6 @@ package es.cursojava.inicio.metodos.ejercicios;
 import java.util.Random;
 import java.util.Scanner;
 
-import javax.annotation.processing.SupportedSourceVersion;
-
 public class Ejercicio6Metodos {
 
 //	Ejercicio 6 - Ahorcado
@@ -44,6 +42,12 @@ public class Ejercicio6Metodos {
 //	 
 //	Intentar adivinar la frase antes de fallar seis intentos.
 //	Si no falla en 6 ocasiones el usuario pierde.
+	
+////	Diferencia entre == y .equals() en String
+////	==: compara si dos referencias apuntan al mismo objeto en memoria.
+////
+////	.equals(): compara el contenido de los objetos String.
+////	POR ESO EN ESTE CASO LO CORRECTO ES USAR EQUALS.
 
 	static String sentence;
 	static String fraseOculta;
@@ -65,12 +69,6 @@ public class Ejercicio6Metodos {
 		System.out.println(getSentence(sujetos, verbos, complementos));
 
 		int intentos = 0;
-
-//		Diferencia entre == y .equals() en String
-//			==: compara si dos referencias apuntan al mismo objeto en memoria.
-//
-//			.equals(): compara el contenido de los objetos String.
-//		POR ESO EN ESTE CASO LO CORRECTO ES USAR EQUALS.
 
 		while (!fraseOculta.equals(sentence) && intentos < 6) {
 			System.out.println("\n********************");
