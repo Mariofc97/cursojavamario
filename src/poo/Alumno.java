@@ -8,6 +8,11 @@ public class Alumno {
 	private double notaMedia;
 	private String[] asignaturas;
 	
+	Alumno (String dni){
+		this.dni = dni;
+		
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
