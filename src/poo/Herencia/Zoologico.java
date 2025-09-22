@@ -6,6 +6,7 @@ public class Zoologico {
 		Animal animal = new Vaca("Taurus",200,5205l,2);
 		animal.comer();
 		
+		
 		// Esto no se puede hacer
 		//Vaca animal2 = new Animal("A1",30,12354);
 		
