@@ -6,14 +6,19 @@ public class Animal {
 	private double peso;
 	private long identificador;
 	
-	public Animal() {
+	/*public Animal() {
 		
-	}
+	}*/
 	
 	public Animal(String nombre, double peso, long identificador) {
 		super();
 		this.nombre = nombre;
 		this.peso = peso;
+		this.identificador = identificador;
+	}
+	
+	public Animal(long identificador) {
+		super();
 		this.identificador = identificador;
 	}
 	
