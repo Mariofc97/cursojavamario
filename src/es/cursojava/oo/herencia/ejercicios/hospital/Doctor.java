@@ -24,13 +24,11 @@ public class Doctor extends EmpleadosHospital {
 		
 		if (temperatura <= 37) {
 			System.out.println("El paciente esta sano, tiene " + temperatura + " grados de temperatura" );
+			return null;
 		} else {
 			System.out.println("El paciente esta sano, tiene " + temperatura + " grados de temperatura" );
 			return new Enfermo(paciente.getNombre(),paciente.getEdad());
 		}
 	}
 	
-	
-	
-
 }

@@ -8,6 +8,10 @@ public class Paciente extends Persona {
 		super(nombre, edad);
 		this.sintomas = sintomas;
 	}
+	
+	public Paciente(String nombre, int edad) {
+		super(nombre, edad);
+	}
 
 	public String[] getSintomas() {
 		return sintomas;
