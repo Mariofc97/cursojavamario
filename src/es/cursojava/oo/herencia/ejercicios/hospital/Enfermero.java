@@ -8,6 +8,10 @@ public class Enfermero extends EmpleadosHospital {
 		super(nombre, edad, turno);
 		this.planta = planta;
 	}
+	
+	public Enfermero(String nombre, int edad) {
+		super(nombre, edad);
+	}
 
 	public String getPlanta() {
 		return planta;

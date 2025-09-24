@@ -31,25 +31,30 @@ public class EmpleadosHospital extends Persona {
 	}
 
 	public void fichar() {
-		System.out.println("Por favor, introduzca el numero de su turno: \n1. Mañana \n2. Tarde \n3. Noche");
+		System.out.println("Por favor, introduzca el numero correspondiente a su turno: \n1. Mañana \n2. Tarde \n3. Noche");
 		Scanner scan = new Scanner(System.in);
 		int numero = scan.nextInt();
 		switch (numero) {
 		case 1:
 			this.turno = "mañana";
-			System.out.println("El empleado " + getNombre()+ " para trabajar en horario de " + this.turno);
+			System.out.println("El empleado " + getNombre()+ " esta listo/a para trabajar en horario de " + this.turno);
 			break;
 		case 2:
 			this.turno = "tarde";
-			System.out.println("El empleado " + getNombre()+ " para trabajar en horario de " + this.turno);
+			System.out.println("El empleado " + getNombre()+ " esta listo/a para trabajar en horario de " + this.turno);
 			break;
 		case 3:
 			this.turno = "noche";
-			System.out.println("El empleado " + getNombre()+ " para trabajar en horario de " + this.turno);
+			System.out.println("El empleado " + getNombre()+ " esta listo/a para trabajar en horario de " + this.turno);
 			break;
 		default:
 			System.out.println("El turno elegido no existe");
 		}
+	}
+	
+	public void comer() {
+		super.comer();
+		System.out.println("El empleado " + getNombre() + " esta comiendo en el comedor");
 	}
 
 }
