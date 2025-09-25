@@ -28,7 +28,7 @@ public class Persona {
 	}
 	
 	public void comer() {
-		System.out.println(getNombre() + "se va a comer");
+		System.out.println(getNombre() + " se va a comer");
 	}
 	
 	

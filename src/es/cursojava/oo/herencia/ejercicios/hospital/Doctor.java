@@ -21,27 +21,12 @@ public class Doctor extends EmpleadosHospital {
 	public void setEspecialidad(String especialidad) {
 		this.especialidad = especialidad;
 	}
-
-	/*public void diagnosticarPaciente(Paciente[] salaDeEspera) {
-		for (Paciente paciente: salaDeEspera){
-			comprobarTemperatura(paciente);
-			if(comprobarTemperatura(paciente)==null) {
-				System.out.println("El paciente esta sano, puede marcharse a casa");
-			} else{
-				Enfermo enfermo = 
-			}
-			
-			if (paciente instanceof Paciente p ) {
-				System.out.println("Paciente " + p.getNombre());
-				p.comer();
-			}
-		}
-	}*/
 	
-	public Enfermo comprobarTemperatura(Paciente paciente) {
+	public Enfermo diagnosticarPaciente(Paciente paciente) {
 		int min = 34;
 		int max = 42;
 		int temperatura = (int) (Math.random() * (max - min + 1)) + min;
+		System.out.println("El doctor " + this.getNombre() + " va a diagnosticar al paciente " + paciente.getNombre());
 		
 		if (temperatura <= 37) {
 			System.out.println("El paciente esta sano, tiene " + temperatura + " grados de temperatura" );

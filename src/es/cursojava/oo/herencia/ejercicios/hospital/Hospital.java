@@ -13,7 +13,14 @@ public class Hospital {
 		Hospital hospital1 = new Hospital("Hospital General", null, null);
 		hospital1.abrirHospital();
 		hospital1.ficharEmpleados();
-
+		
+		hospital1.HoraDeComer();
+		
+		hospital1.pasarConsultas();
+		
+		// comprobar hora de comer tambien con enfermos situados en habitaciones
+		
+		hospital1.HoraDeComer();
 	}
 
 	public Hospital(String nombre, Habitacion[] habitaciones, Paciente[] salaDeEspera) {
@@ -51,12 +58,12 @@ public class Hospital {
 
 		System.out.println("El hospital ha abierto con: ");
 
-		Habitacion hab1 = new Habitacion(01);
-		Habitacion hab2 = new Habitacion(02);
+		Habitacion hab1 = new Habitacion(1);
+		Habitacion hab2 = new Habitacion(2);
 
-		Habitacion[] habitaciones = { hab1, hab2 };
+		this.habitaciones = new Habitacion[] { hab1, hab2 };
 
-		System.out.println(habitaciones.length + " habitaciones");
+		System.out.println(this.habitaciones.length + " habitaciones");
 
 		Paciente pac1 = new Paciente("Mario", 27);
 		Paciente pac2 = new Paciente("Manu", 30);
@@ -96,6 +103,7 @@ public class Hospital {
 				e.fichar();
 			}
 		}
+		
 	}
 
 	public void HoraDeComer() {
@@ -117,6 +125,49 @@ public class Hospital {
 				p.comer();
 			}
 		}
+		
+		for (Habitacion hab : habitaciones) {
+			if(hab.getEnfermo()!= null) {
+				System.out.println("Enfermo " + hab.getEnfermo().getNombre());
+				hab.getEnfermo().comer();
+			} else if (hab.getEnfermo()== null) {
+				System.out.println("Todavia no hay enfermos ingresados en habitaciones");
+			}
+		}
+	}
+	
+	public void pasarConsultas() {
+		if (salaDeEspera == null || salaDeEspera.length == 0) {
+			System.out.println("No hay pacientes en la sala de espera");
+		}
+		Doctor doc = getDoctor();
+		Enfermero enf = getEnfermero();
+		if(doc == null || enf == null) {
+			System.out.println("No hay personal suficiente para asistir a los pacientes");
+		}
+		
+		System.out.println("----El personal sanitario procede a pasar consulta----");
+		while(salaDeEspera.length>0) {
+			Paciente p = sacarPacienteDeSalaEspera();
+			enf.atenderPaciente(p);
+			
+			Enfermo enfermo = doc.diagnosticarPaciente(p);
+			
+			if (enfermo != null) {
+				Habitacion libre = buscarHabitacionLibre();
+				if (libre != null) {
+					libre.setEnfermo(enfermo);
+					System.out.println(p.getNombre() + " ingresado en la habitacion " + libre.getNumero());
+				} else {
+					System.out.println("Lo sentimos, no hay habitaciones disponibles para " + p.getNombre());
+				}
+			} else {
+				System.out.println(p.getNombre() + " esta sano, no requiere ingreso");
+			}
+		}
+		
+		System.out.println("Consulta finalizada. Quedan " + salaDeEspera.length + " pacientes en la sala de espera");
+		
 	}
 
 	private Paciente sacarPacienteDeSalaEspera() {
@@ -156,9 +207,12 @@ public class Hospital {
 			return null;
 		} else {
 			for (Habitacion habitacion : habitaciones) {
-				if 
+				if (habitacion.getEnfermo() == null) {
+					return habitacion;
+				}
 			}
 		}
+		return null;
 	}
 
 	public void pasarConsultas(Paciente[] salaDeEspera) {

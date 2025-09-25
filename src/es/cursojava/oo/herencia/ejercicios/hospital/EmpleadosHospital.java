@@ -50,6 +50,8 @@ public class EmpleadosHospital extends Persona {
 		default:
 			System.out.println("El turno elegido no existe");
 		}
+		
+		
 	}
 	
 	public void comer() {
