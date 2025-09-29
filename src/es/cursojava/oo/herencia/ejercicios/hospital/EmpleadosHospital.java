@@ -54,6 +54,7 @@ public class EmpleadosHospital extends Persona {
 		
 	}
 	
+	
 	public void comer() {
 		super.comer();
 		System.out.println("El empleado " + getNombre() + " esta comiendo en el comedor");

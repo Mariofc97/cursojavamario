@@ -13,14 +13,18 @@ public class Hospital {
 		Hospital hospital1 = new Hospital("Hospital General", null, null);
 		hospital1.abrirHospital();
 		hospital1.ficharEmpleados();
-		
 		hospital1.HoraDeComer();
-		
-		hospital1.pasarConsultas();
-		
-		// comprobar hora de comer tambien con enfermos situados en habitaciones
-		
+		hospital1.pasarConsultas();		
 		hospital1.HoraDeComer();
+		/*boolean coberturaOk = hospital1.controlarFichaje();
+		if (!coberturaOk) {
+		    System.out.println("Hay turnos sin la cobertura mínima.");
+		    hospital1.ficharEmpleados();
+		} else {
+			hospital1.HoraDeComer();
+			hospital1.pasarConsultas();		
+			hospital1.HoraDeComer();
+		}*/
 	}
 
 	public Hospital(String nombre, Habitacion[] habitaciones, Paciente[] salaDeEspera) {
@@ -103,56 +107,88 @@ public class Hospital {
 				e.fichar();
 			}
 		}
-		
+
 	}
+
+	/*public boolean controlarFichaje() {
+		if (empleados.length == 0) {
+			return false;
+		}
+		String[] Turnos = { "mañana", "tarde", "noche" };
+		boolean todoOk = false;
+
+		for (String turno : Turnos) {
+			int doctores = 0;
+			int enfermeros = 0;
+
+			for (EmpleadosHospital empleado : empleados) {
+				String t = empleado.getTurno();
+				if (t != null && turno.equalsIgnoreCase(empleado.getTurno())) {
+					if (empleado instanceof Doctor d) {
+						doctores++;
+
+					} else if (empleado instanceof Enfermero e) {
+						enfermeros++;
+					}
+					
+					if(doctores == 0 || enfermeros == 0) {
+						System.out.println("Es necesario mas personal para iniciar el turno");
+						todoOk = false;
+					} else {
+						System.out.println("Se ha iniciado la jornada en el turno " + turno + " con " + doctores + " doctores y " + enfermeros + " enfermeros");
+					}
+				}
+			}
+
+		}
+		
+		return todoOk = true;
+
+	}*/
 
 	public void HoraDeComer() {
 		System.out.println("Es la hora de comer");
 		for (EmpleadosHospital empleado : empleados) {
 			if (empleado instanceof Doctor d) {
-				System.out.println("Doctor " + d.getNombre());
-				empleado.comer();
+				d.comer();
 
 			} else if (empleado instanceof Enfermero e) {
-				System.out.println("Enfermero " + e.getNombre() + " || " + e.getEdad() + " años");
-				empleado.comer();
+				e.comer();
 			}
 		}
 
 		for (Paciente paciente : salaDeEspera) {
 			if (paciente instanceof Paciente p) {
-				System.out.println("Paciente " + p.getNombre());
 				p.comer();
 			}
 		}
-		
+
 		for (Habitacion hab : habitaciones) {
-			if(hab.getEnfermo()!= null) {
-				System.out.println("Enfermo " + hab.getEnfermo().getNombre());
+			if (hab.getEnfermo() != null) {
 				hab.getEnfermo().comer();
-			} else if (hab.getEnfermo()== null) {
+			} else if (hab.getEnfermo() == null) {
 				System.out.println("Todavia no hay enfermos ingresados en habitaciones");
 			}
 		}
 	}
-	
+
 	public void pasarConsultas() {
 		if (salaDeEspera == null || salaDeEspera.length == 0) {
 			System.out.println("No hay pacientes en la sala de espera");
 		}
 		Doctor doc = getDoctor();
 		Enfermero enf = getEnfermero();
-		if(doc == null || enf == null) {
+		if (doc == null || enf == null) {
 			System.out.println("No hay personal suficiente para asistir a los pacientes");
 		}
-		
+
 		System.out.println("----El personal sanitario procede a pasar consulta----");
-		while(salaDeEspera.length>0) {
+		while (salaDeEspera.length > 0) {
 			Paciente p = sacarPacienteDeSalaEspera();
 			enf.atenderPaciente(p);
-			
+
 			Enfermo enfermo = doc.diagnosticarPaciente(p);
-			
+
 			if (enfermo != null) {
 				Habitacion libre = buscarHabitacionLibre();
 				if (libre != null) {
@@ -165,9 +201,9 @@ public class Hospital {
 				System.out.println(p.getNombre() + " esta sano, no requiere ingreso");
 			}
 		}
-		
+
 		System.out.println("Consulta finalizada. Quedan " + salaDeEspera.length + " pacientes en la sala de espera");
-		
+
 	}
 
 	private Paciente sacarPacienteDeSalaEspera() {
@@ -184,24 +220,25 @@ public class Hospital {
 			return p;
 		}
 	}
-	
+
 	private Doctor getDoctor() {
-		for (EmpleadosHospital empleado:empleados) {
+		for (EmpleadosHospital empleado : empleados) {
 			if (empleado instanceof Doctor d) {
 				return d;
-			} 
+			}
 		}
 		return null;
 	}
+
 	private Enfermero getEnfermero() {
-		for (EmpleadosHospital empleado:empleados) {
+		for (EmpleadosHospital empleado : empleados) {
 			if (empleado instanceof Enfermero e) {
 				return e;
-			} 
+			}
 		}
 		return null;
 	}
-	
+
 	private Habitacion buscarHabitacionLibre() {
 		if (habitaciones == null) {
 			return null;
@@ -220,9 +257,9 @@ public class Hospital {
 			if (paciente instanceof Paciente p) {
 				sacarPacienteDeSalaEspera();
 				System.out.println("Paciente " + p.getNombre());
-			
+
 			}
-			
+
 		}
 	}
 

@@ -1,0 +1,18 @@
+	Ejercicio 1:
+	
+	// crear la interfaz limpiable, va a tener el metodo abstracto limpiar().
+	// crear la interfaz desinfectable, que va a heredar de limpiable y va a tener el metodo desinfectar():
+	
+	// hay que limpiar:
+	// crear la clase Mueble, con el atributo color.
+	// crear la clase Mesa hereda de Mueble, con el atributo forma.
+	// crear la clase Silla hereda de Mueble, con el atributo material.
+	
+	//Hay que limpiar y desinfectar:
+	// crear la clase Verdura, con atributo procedencia.
+	// crear la clase Lechuga, que hereda de la Verdura, con atributo tipo
+	// crear la clase JudiasVerdes, que hereda de la Verdura, con atributo tieneVaina
+	
+	// Main
+	// 1 objeto de cada clase
+	// metodo para desinfectar objetos.
