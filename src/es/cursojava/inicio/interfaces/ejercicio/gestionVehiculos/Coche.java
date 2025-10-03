@@ -16,6 +16,11 @@ public class Coche extends VehiculoMotorizado {
 		super(id, nombre);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public String toString() {
+	    return getClass().getSimpleName() + " " + this.getNombre();  // "Coche Seat Ibiza"
+	}
 
 	@Override
 	public String getMotor() {
@@ -32,36 +37,30 @@ public class Coche extends VehiculoMotorizado {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		super.update();
-		log.info("Actualizando coche {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Actualizando {}",this, " por el id ", this.getId());
 	}
 
 	@Override
 	public void insert() {
 		// TODO Auto-generated method stub
-		super.insert();
-		log.info("Insertando coche {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Insertando {}",this, " por el id ", this.getId());
 	}
 
 	@Override
 	public void select() {
 		// TODO Auto-generated method stub
-		super.select();
-		log.info("Consultando coche {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Consultando {}",this, " por el id ", this.getId());
 	}
 
 	@Override
 	public void encender() {
 		// TODO Auto-generated method stub
-		super.encender();
-		log.info("Arrancando coche {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Arrancando {}", this);
 	}
 
 	@Override
 	public void apagar() {
-		// TODO Auto-generated method stub
-		super.apagar();
-		log.info("Apagando coche {}" +  this.getClass().getSimpleName());
+	    log.info("Apagando {}", this); // usa toString()
 	}
 	
 	

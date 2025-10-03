@@ -16,40 +16,36 @@ public class Movil extends ProductosElectronicos {
 		super(id, nombre);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public String toString() {
+	    return getClass().getSimpleName() + " " + this.getNombre();
+	}
 
 	@Override
 	public void update() {
-		super.update();
-		log.info("Actualizando movil {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Actualizando {}", this, " por el id ",this.getId());
 	}
 
 	@Override
 	public void insert() {
-		super.insert();
-		log.info("Insertando movil {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Insertando {}", this, " por el id ",this.getId());
 	}
 
 	@Override
 	public void select() {
-		super.select();
-		log.info("Consultando movil {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Consultando {}", this, " por el id ",this.getId());
 	}
 
 	@Override
 	public void encender() {
-		super.encender();
-		log.info("Encendiendo movil {}" +  this.getClass().getSimpleName());
+		log.info("Encendiendo {}", this, " por el id ",this.getId());
 	}
 
 	@Override
 	public void apagar() {
-		super.apagar();
-		log.info("Apagando movil {}" +  this.getClass().getSimpleName());
+		log.info("Apagando {}", this, " por el id ",this.getId());
 	}
-	
-	
-	
-
 	
 
 }

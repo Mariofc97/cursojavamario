@@ -22,15 +22,7 @@ public abstract class Alimentos extends Producto implements Consultable {
 	public void setFechaCaducidad(String fechaCaducidad) {
 		this.fechaCaducidad = fechaCaducidad;
 	}
-
-	@Override
-	public void select() {
-		// TODO Auto-generated method stub
-		
-	}
 	
-	
-
 
 
 }

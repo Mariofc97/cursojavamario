@@ -15,18 +15,6 @@ public abstract class Bicicleta extends Vehiculo implements Consultable, Deletab
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void select() {
-		// TODO Auto-generated method stub
-		
-	}
-
 	public int getNumMarchas() {
 		return numMarchas;
 	}

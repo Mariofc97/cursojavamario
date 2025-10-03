@@ -16,17 +16,21 @@ public class MountainBike extends Bicicleta {
 		super(id, nombre);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public String toString() {
+	    return getClass().getSimpleName() + " " + this.getNombre();
+	}
+
 
 	@Override
 	public void delete() {
-		super.delete();
-		log.info("Eliminando bici {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Eliminando {}" ,this, " por el id ",this.getId());
 	}
 
 	@Override
 	public void select() {
-		super.select();
-		log.info("Consultando bici {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Consultando {}" ,this, " por el id ",this.getId());
 	}
 
 	@Override
@@ -41,14 +45,12 @@ public class MountainBike extends Bicicleta {
 
 	@Override
 	public void update() {
-		super.update();
-		log.info("Actualizando bici {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Actualizando {}" ,this, " por el id ",this.getId());
 	}
 
 	@Override
 	public void insert() {
-		super.insert();
-		log.info("Insertando bici {}" +  this.getClass().getSimpleName() + " por el id " + this.getId());
+		log.info("Insertando {}" ,this, " por el id ",this.getId());
 	}
 	
 	

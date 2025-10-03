@@ -21,36 +21,6 @@ public abstract class VehiculoMotorizado extends Vehiculo implements Apagable,En
 	public void setMotor(String motor) {
 		this.motor = motor;
 	}
-
-	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void insert() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void select() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void encender() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void apagar() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
 

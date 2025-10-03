@@ -9,39 +9,18 @@ public class MainTienda {
 		Coche coche1 = new Coche("03","Seat Ibiza", "Gris", 9000);
 		MountainBike bici1 = new MountainBike("04","BiciCross 3.0");
 		
-		selectObject(platano1);
-		insertObject(movil1);
-		updateObject(coche1);
-		deletableObject(bici1);
+		//Encendible coche2 = new Coche("05","Renault Laguna","Negro",4500);
 		
-		encender(movil1);
-		apagar(coche1);
+		Encendible[] arrayEncendible = {coche1,movil1};
+		Operaciones.encenderObjetos(arrayEncendible);
 		
-	}
-	
-	private static void encender(Encendible e) {
-		e.encender();
-	}
-	
-	private static void apagar(Apagable a) {
-		a.apagar();
-	}
-	
-	private static void insertObject(Insertable i) {
-		i.insert();
-	}
-	
-	private static void selectObject(Consultable c) {
-		c.select();
-	}
-	
-	private static void updateObject(Updatable u) {
-		u.update();
+		Operaciones.selectObject(platano1);
+		Operaciones.insertObject(movil1);
+		Operaciones.updateObject(coche1);
+		Operaciones.deletableObject(bici1);
 		
-	}
-	
-	private static void deletableObject(Deletable d) {
-		d.delete();
+		Operaciones.encender(movil1);
+		Operaciones.apagar(coche1);
 		
 	}
 	
