@@ -11,6 +11,14 @@ public class Persona {
 		this.edad = edad;
 	}
 
+	public Persona() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Persona(String string) {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -29,6 +37,11 @@ public class Persona {
 	
 	public void comer() {
 
+	}
+
+	public char[] getDni() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

@@ -8,6 +8,13 @@ public class Alumno {
 	private double notaMedia;
 	private String[] asignaturas;
 	
+	public Alumno(String nombre, String dni, double notaMedia) {
+		super();
+		this.nombre = nombre;
+		this.dni = dni;
+		this.notaMedia = notaMedia;
+	}
+	
 	Alumno (String dni){
 		this.dni = dni;
 		
@@ -34,6 +41,7 @@ public class Alumno {
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
+
 
 
 
@@ -74,6 +82,11 @@ public class Alumno {
 			System.out.println("Es un genio");
 		}
 	}
+	
+    @Override
+    public String toString() {
+    	return "Alumno{nombre='" + nombre + "', dni='" + dni + "', notaMedia=" + notaMedia + "}";
+    }
 	
 
 }
