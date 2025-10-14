@@ -11,6 +11,10 @@ public class Platano extends Alimentos {
 		super(id, nombre, fechaCaducidad);
 	}
 	
+	public Platano(String id, String nombre) {
+		super(id, nombre);
+	}
+	
 	@Override
 	public String toString() {
 	    return getClass().getSimpleName() + " " + this.getNombre();
