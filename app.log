@@ -51,3 +51,75 @@
 17:03:22.827 [main] INFO  es.cursojava.inicio.interfaces.ejercicio.gestionVehiculos.MountainBike - Eliminando MountainBike BiciCross 3.0
 17:03:22.827 [main] INFO  es.cursojava.inicio.interfaces.ejercicio.gestionVehiculos.Movil - Encendiendo Movil Samsung Galaxy
 17:03:22.828 [main] INFO  es.cursojava.inicio.interfaces.ejercicio.gestionVehiculos.Coche - Apagando Coche Seat Ibiza
+00:59:01.179 [main] DEBUG es.cursojava.inicio.hipodromo.Carrera - Comienza la carrera La velada del año
+00:59:01.192 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 15.998650128370048 y su energia era 90 y pasa a ser 80 sobre 100
+00:59:01.197 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Cabalgabuelas corre con Trueno a velocidad 17.278542138639654
+00:59:01.198 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Cabalgabuelas alcanza velocidad 17.278542138639654
+00:59:01.199 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 17.02467380024162 y su energia era 80 y pasa a ser 70 sobre 100
+00:59:01.199 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Trotavergas corre con Trueno a velocidad 18.046154228256118
+00:59:01.199 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Trotavergas alcanza velocidad 18.046154228256118
+00:59:01.200 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 15.255848593781005 y su energia era 70 y pasa a ser 60 sobre 100
+00:59:01.200 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - EldeLaTribuComanche corre con Trueno a velocidad 16.628874967221297
+00:59:01.200 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - EldeLaTribuComanche alcanza velocidad 16.628874967221297
+00:59:01.200 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Ganador Trotavergas
+00:59:01.200 [main] DEBUG es.cursojava.inicio.hipodromo.Carrera - Comienza la carrera La velada del año 2
+00:59:01.200 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 16.217157507920767 y su energia era 60 y pasa a ser 50 sobre 100
+00:59:01.201 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Cabalgabuelas corre con Trueno a velocidad 17.51453010855443
+00:59:01.201 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Cabalgabuelas alcanza velocidad 17.51453010855443
+00:59:01.201 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 15.672067523130716 y su energia era 50 y pasa a ser 40 sobre 100
+00:59:01.201 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Trotavergas corre con Trueno a velocidad 16.61239157451856
+00:59:01.201 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Trotavergas alcanza velocidad 16.61239157451856
+00:59:01.201 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 13.541308444254966 y su energia era 40 y pasa a ser 30 sobre 100
+00:59:01.202 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - EldeLaTribuComanche corre con Trueno a velocidad 14.760026204237914
+00:59:01.202 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - EldeLaTribuComanche alcanza velocidad 14.760026204237914
+00:59:01.202 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Ganador Cabalgabuelas
+01:19:28.866 [main] DEBUG es.cursojava.inicio.hipodromo.Carrera - Comienza la carrera La velada del año
+01:19:28.878 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 18.83404116203355 y su energia era 90 y pasa a ser 80 sobre 100
+01:19:28.883 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Cabalgabuelas corre con Trueno a velocidad 20.340764454996236
+01:19:28.885 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Cabalgabuelas alcanza velocidad 20.340764454996236
+01:19:28.886 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 16.73884768820236 y su energia era 80 y pasa a ser 70 sobre 100
+01:19:28.886 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Trotavergas corre con Trueno a velocidad 17.743178549494502
+01:19:28.886 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Trotavergas alcanza velocidad 17.743178549494502
+01:19:28.886 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 14.55817485909007 y su energia era 70 y pasa a ser 60 sobre 100
+01:19:28.886 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - EldeLaTribuComanche corre con Trueno a velocidad 15.868410596408177
+01:19:28.886 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - EldeLaTribuComanche alcanza velocidad 15.868410596408177
+01:19:28.887 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Ganador Cabalgabuelas
+01:19:28.893 [main] INFO  es.cursojava.inicio.hipodromo.Caballo - Trueno descansa : energia 60 -> 85
+01:19:28.893 [main] INFO  es.cursojava.inicio.hipodromo.Caballo - Trueno descansa : energia 85 -> 100
+01:19:28.893 [main] INFO  es.cursojava.inicio.hipodromo.Caballo - Trueno descansa : energia 100 -> 100
+01:19:28.893 [main] DEBUG es.cursojava.inicio.hipodromo.Carrera - Comienza la carrera La velada del año 2
+01:19:28.893 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 20.31950064993079 y su energia era 100 y pasa a ser 89 sobre 100
+01:19:28.893 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Cabalgabuelas corre con Trueno a velocidad 21.945060701925257
+01:19:28.894 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Cabalgabuelas alcanza velocidad 21.945060701925257
+01:19:28.894 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 17.07118894961852 y su energia era 89 y pasa a ser 79 sobre 100
+01:19:28.894 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Trotavergas corre con Trueno a velocidad 18.09546028659563
+01:19:28.894 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Trotavergas alcanza velocidad 18.09546028659563
+01:19:28.894 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 18.416247464348242 y su energia era 79 y pasa a ser 69 sobre 100
+01:19:28.894 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - EldeLaTribuComanche corre con Trueno a velocidad 20.073709736139584
+01:19:28.894 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - EldeLaTribuComanche alcanza velocidad 20.073709736139584
+01:19:28.895 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Ganador Cabalgabuelas
+01:21:42.116 [main] DEBUG es.cursojava.inicio.hipodromo.Carrera - Comienza la carrera La velada del año
+01:21:42.129 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 19.39245751157189 y su energia era 90 y pasa a ser 80 sobre 100
+01:21:42.134 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Cabalgabuelas corre con Trueno a velocidad 20.943854112497643
+01:21:42.136 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Cabalgabuelas alcanza velocidad 20.943854112497643
+01:21:42.138 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Spirit corre a velocidad 17.674711952381607 y su energia era 90 y pasa a ser 80 sobre 100
+01:21:42.138 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Trotavergas corre con Spirit a velocidad 18.735194669524503
+01:21:42.138 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Trotavergas alcanza velocidad 18.735194669524503
+01:21:42.138 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Volt corre a velocidad 18.564499811298983 y su energia era 90 y pasa a ser 80 sobre 100
+01:21:42.138 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - EldeLaTribuComanche corre con Volt a velocidad 20.235304794315894
+01:21:42.138 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - EldeLaTribuComanche alcanza velocidad 20.235304794315894
+01:21:42.139 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Ganador Cabalgabuelas
+01:21:42.145 [main] INFO  es.cursojava.inicio.hipodromo.Caballo - Trueno descansa : energia 80 -> 100
+01:21:42.146 [main] INFO  es.cursojava.inicio.hipodromo.Caballo - Spirit descansa : energia 80 -> 100
+01:21:42.146 [main] INFO  es.cursojava.inicio.hipodromo.Caballo - Volt descansa : energia 80 -> 100
+01:21:42.146 [main] DEBUG es.cursojava.inicio.hipodromo.Carrera - Comienza la carrera La velada del año 2
+01:21:42.146 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Trueno corre a velocidad 19.65059232515308 y su energia era 100 y pasa a ser 90 sobre 100
+01:21:42.146 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Cabalgabuelas corre con Trueno a velocidad 21.22263971116533
+01:21:42.146 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Cabalgabuelas alcanza velocidad 21.22263971116533
+01:21:42.146 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Spirit corre a velocidad 20.869505391053593 y su energia era 100 y pasa a ser 89 sobre 100
+01:21:42.146 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - Trotavergas corre con Spirit a velocidad 22.12167571451681
+01:21:42.147 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Trotavergas alcanza velocidad 22.12167571451681
+01:21:42.147 [main] DEBUG es.cursojava.inicio.hipodromo.Caballo - Volt corre a velocidad 20.488371035831268 y su energia era 100 y pasa a ser 89 sobre 100
+01:21:42.147 [main] DEBUG es.cursojava.inicio.hipodromo.Jinete - EldeLaTribuComanche corre con Volt a velocidad 22.332324429056083
+01:21:42.147 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - EldeLaTribuComanche alcanza velocidad 22.332324429056083
+01:21:42.147 [main] INFO  es.cursojava.inicio.hipodromo.Carrera - Ganador EldeLaTribuComanche

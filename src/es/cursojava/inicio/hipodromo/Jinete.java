@@ -6,7 +6,7 @@ import org.slf4j.LoggerFactory;
 public abstract class Jinete implements Competidor {
 	
 	protected static final Logger log = LoggerFactory.getLogger(Jinete.class);
-	private String nombre;
+	protected String nombre;
 	protected int experiencia; // pongamos del 1 al 10
 	protected Caballo caballo;
 	
@@ -14,6 +14,8 @@ public abstract class Jinete implements Competidor {
 		super();
 		this.nombre = nombre;
 		this.experiencia = experiencia;
+		if (experiencia < 0) experiencia = 0;
+		if (experiencia > 10) experiencia = 10;
 		this.caballo = caballo;
 	}
 

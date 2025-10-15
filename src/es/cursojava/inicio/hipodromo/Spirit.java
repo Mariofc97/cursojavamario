@@ -7,6 +7,11 @@ public class Spirit extends Caballo {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Spirit(String nombre, double velocidadBase, int energia) {
+		super(nombre, velocidadBase, energia);
+		// TODO Auto-generated constructor stub
+	}
+	
 	
 
 	@Override

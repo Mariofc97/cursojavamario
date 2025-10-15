@@ -22,6 +22,16 @@ public abstract class Caballo {
 		this.energia = energia;
 		this.victorias = victorias;
 	}
+	
+	public Caballo(String nombre, double velocidadBase, int energia) {
+		
+		super();
+		this.nombre = nombre;
+		this.velocidadBase = velocidadBase;
+		if (energia < 0) energia = 0;
+		if (energia > 100) energia = 100;
+		this.energia = energia;
+	}
 
 	public Caballo(String nombre) {
 		super();
