@@ -11,42 +11,21 @@ public class EjemplosSet {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
+		//Las 2 diferencias clave:
 
-		//1)//List permite duplicados (y varios null).
+			//Duplicados
 
-		// no permite duplicados; como mucho un null (en HashSet/LinkedHashSet; TreeSet no admite null).
+			//Set: no permite elementos repetidos.
 
-		//2) //Set.add(e) devuelve false si el elemento ya existía; en List.add(e) suele devolver true.
-		
-		//Set no tiene índice. El orden depende de la implementación:
+			//List: sí permite repetidos.
 
-			//HashSet: sin orden garantizado.
+			//Orden e índice
 
-			//LinkedHashSet: mantiene orden de inserción.
-		
-		//3) Igualdad (equals) y semántica
+			//Set: no garantiza orden ni tiene índice (no accedes por posición).
 
-		//Dos List son iguales si tienen mismos elementos en el mismo orden.
+			//List: mantiene un orden (normalmente el de inserción) y permite acceso por índice.
 
-		//Dos Set son iguales si contienen los mismos elementos, sin importar el orden.
-
-		//4) Complejidad y rendimiento (típico)
-
-		//Búsqueda contains(e):
-
-		//: O(n)
-
-		//LinkedList: O(n)
-
-		//HashSet: O(1) promedio
-
-		//TreeSet: O(log n)
-
-		//Acceso por índice:
-
-		//ArrayList: O(1) promedio
-
-		//LinkedList: O(n)
+			//(Consecuencia práctica: los Set suelen usarse para pruebas de pertenencia rápidas; las List, para secuencias ordenadas y acceso posicional.)
 
 		//Set: no aplica
 		Set<Persona> conjunto = new HashSet();
