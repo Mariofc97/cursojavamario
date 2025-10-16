@@ -22,6 +22,7 @@ public class Spirit extends Caballo {
 		double factorAleatorio = 0.9 + Math.random() * 0.3;
 
 		double velocidadReal = velocidadBase * factorEnergia * factorAleatorio;
+		velocidadReal = Math.round(velocidadReal * 100.0)/100.0;
 		
 		int energiaAntes = energia;
 		int desgaste = 8 + (int) Math.round(velocidadReal / 8.0);

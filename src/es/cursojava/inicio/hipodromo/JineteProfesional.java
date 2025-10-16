@@ -17,6 +17,7 @@ public class JineteProfesional extends Jinete {
 	public double correr() {
 		double bonusExperiencia = 1.0 + (experiencia / 100.0);
 		double velocidad = caballo.correr() * bonusExperiencia;
+		velocidad = Math.round(velocidad*100.0) / 100.0;
 		log.debug(nombre + " corre con " + caballo.getNombre() + " a velocidad " + velocidad );
 		return velocidad;
 	}

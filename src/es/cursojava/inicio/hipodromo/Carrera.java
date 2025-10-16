@@ -30,6 +30,7 @@ public class Carrera {
 	}
 	
 	public void iniciarCarrera() {
+		System.out.println();
 		log.debug("Comienza la carrera " + nombreCarrera);
 		
 		double mejorVelocidad = 0;
@@ -37,6 +38,7 @@ public class Carrera {
 		
 		for (Competidor p : participantes) {
 			double velocidad = p.correr();
+			velocidad = Math.round(velocidad * 100.0) / 100.0;
 			log.info(p.getNombre() + " alcanza velocidad " + velocidad);
 			if(velocidad > mejorVelocidad) {
 				mejorVelocidad = velocidad;
@@ -48,6 +50,7 @@ public class Carrera {
 			ganador = mejorCompetidor;
 			ganador.sumarVictoria();
 			log.info("Ganador " + ganador.getNombre());
+			System.out.println();
 		}
 	}
 	
