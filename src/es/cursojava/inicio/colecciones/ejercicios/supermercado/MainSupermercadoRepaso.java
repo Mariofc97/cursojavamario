@@ -19,6 +19,9 @@ public class MainSupermercadoRepaso {
 			System.out.println("\nBienvenido " + c.getNombre());
 			System.out.println("Tienes los siguiente productos disponibles: ");
 			
+			String repuesta = "";
+			
+			
 			
 		}
 	}

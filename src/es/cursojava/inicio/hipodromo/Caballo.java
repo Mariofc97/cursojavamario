@@ -11,25 +11,29 @@ public abstract class Caballo {
 	protected int victorias;
 
 	protected static final Logger log = LoggerFactory.getLogger(Caballo.class);
-	
+
 	public Caballo(String nombre, double velocidadBase, int energia, int victorias) {
-		
+
 		super();
 		this.nombre = nombre;
 		this.velocidadBase = velocidadBase;
-		if (energia < 0) energia = 0;
-		if (energia > 100) energia = 100;
+		if (energia < 0)
+			energia = 0;
+		if (energia > 100)
+			energia = 100;
 		this.energia = energia;
 		this.victorias = victorias;
 	}
-	
+
 	public Caballo(String nombre, double velocidadBase, int energia) {
-		
+
 		super();
 		this.nombre = nombre;
 		this.velocidadBase = velocidadBase;
-		if (energia < 0) energia = 0;
-		if (energia > 100) energia = 100;
+		if (energia < 0)
+			energia = 0;
+		if (energia > 100)
+			energia = 100;
 		this.energia = energia;
 	}
 
@@ -69,14 +73,14 @@ public abstract class Caballo {
 	public void setVictorias(int victorias) {
 		this.victorias = victorias;
 	}
-	
+
 	public void sumarVictoria() {
 		victorias++;
 	}
-	
+
 	public abstract double correr();
-	
-	public void descansar () {
+
+	public void descansar() {
 		int antes = energia;
 		energia += 25;
 		if (energia > 100) {
@@ -84,7 +88,7 @@ public abstract class Caballo {
 		}
 		log.info(nombre + " descansa : energia " + antes + " -> " + energia);
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Caballo [nombre=" + nombre + ", velocidadBase=" + velocidadBase + ", energia=" + energia
