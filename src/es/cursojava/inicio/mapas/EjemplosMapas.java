@@ -2,12 +2,12 @@ package es.cursojava.inicio.mapas;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
 import poo.Persona;
-import utils.Utilidades;
 
 public class EjemplosMapas {
 	
@@ -49,7 +49,6 @@ public class EjemplosMapas {
 			//System.out.println(personaValor.getNombre());
 			
 		//}
-		
 		System.out.println("--------Todas los valores de manera directa----------");
 		// obtengo todos los valores a partir de las claves
 		Collection<Persona> colPersonas = personas.values();

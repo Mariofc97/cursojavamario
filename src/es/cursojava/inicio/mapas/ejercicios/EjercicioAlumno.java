@@ -1,9 +1,11 @@
 package es.cursojava.inicio.mapas.ejercicios;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import poo.Alumno;
 import utils.Utilidades;
@@ -34,6 +36,10 @@ public class EjercicioAlumno {
 		Alumno alumno5 = new Alumno("N5","555E",9.5);
 		Alumno alumno6 = new Alumno("N6","666F",9.6);
 		Alumno alumno7 = new Alumno("N7","777G",9.9);
+		
+		//List<Alumno> alumnos = Arrays.asList(alumno1,alumno2,alumno3..)
+		//Map<String, Set<Alumno>> aulas = new HashMap();
+		
 		
 		List<Alumno> listaAula1 = new ArrayList<>();
 		listaAula1.add(alumno1);
