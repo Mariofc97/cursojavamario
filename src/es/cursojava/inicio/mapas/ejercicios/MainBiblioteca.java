@@ -2,9 +2,12 @@ package es.cursojava.inicio.mapas.ejercicios;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import utils.Utilidades;
 
@@ -36,17 +39,20 @@ public class MainBiblioteca {
 
 		Map<Autor, List<Libro>> biblioteca = new HashMap<>();
 		biblioteca.put(autor1, libros1);
+		// biblioteca.get(autor1).add(libro8) PARA AÑADIR MAS LIBROS AL AUTOR 1 HAY QUE
+		// ACCEDER A LA LISTA DE LIBROS
 		biblioteca.put(autor2, libros2);
 		biblioteca.put(autor3, libros3);
 
-		mostrarDatosAutores(autores);
-		mostrarTitulosMas2010(librosTotales);
+		// mostrarDatosAutores(autores);
+		mostrarNacionalidades(biblioteca);
+		mostrarLibrosMas2010(biblioteca);
 		mostrarAutoresConMasDeDosLibros(biblioteca);
 		pideDatosBiblioteca(biblioteca);
 
 	}
 
-	// + mostrar las nacionalidades de los autores
+	// + mostrar las nacionalidades de los autores CON LISTA
 	private static void mostrarDatosAutores(List<Autor> autores) {
 
 		System.out.println("Datos autores: ");
@@ -56,13 +62,49 @@ public class MainBiblioteca {
 		}
 	}
 
+	// + mostrar las nacionalidades de los autores UTILIZANDO EL PROPIO MAPA
+	private static void mostrarNacionalidades(Map<Autor, List<Libro>> biblioteca) {
+		Set<Autor> autores = biblioteca.keySet();
+		for (Autor autor : autores) {
+			try {
+				String[] colores = new String[2];
+				colores[2] = "Azul";
+				System.out.println(autor.getNacionalidad().substring(0, 3));
+				System.out.println("continua");// SI POR LO QUE SEA UNO DE NUESTRO AUTOR TUVIERA UNA NACIONALIDAD NULL,
+												// ESTO LANZARIA NULL POINTER EXCEPCION
+			} catch (NullPointerException npe) {
+				String mensaje = npe.getMessage();
+				npe.getStackTrace();
+				npe.printStackTrace();
+				System.err.println("Mensaje: " + mensaje);
+				System.err.println("Error al obtener la nacionalidad");
+			} catch (StringIndexOutOfBoundsException siobe) {
+				System.err.println("Error al obtener la nacionalidad");
+			} catch (Exception e) {
+				System.err.println("Error general");
+			} finally {
+				System.err.println("Siempre");
+			}
+			System.out.println("termina");
+		}
+	}
+
 	// + mostrar el título de todos los libros publicados después del 2010
-	private static void mostrarTitulosMas2010(List<Libro> libros) {
-		System.out.println("Mostrar titulos publicados despues de 2010: ");
-		for (Libro l : libros) {
-			if (l.getAnio() > 2015) {
-				System.out.println("Titulo: " + l.getTitulo());
-				System.out.println("Año: " + l.getAnio());
+	/*
+	 * private static void mostrarTitulosMas2010(List<Libro> libros) {
+	 * System.out.println("Mostrar titulos publicados despues de 2010: "); for
+	 * (Libro l : libros) { if (l.getAnio() > 2010) { System.out.println("Titulo: "
+	 * + l.getTitulo()); System.out.println("Año: " + l.getAnio()); } } }
+	 */
+
+	private static void mostrarLibrosMas2010(Map<Autor, List<Libro>> biblioteca) {
+		Collection<List<Libro>> listasLibros = biblioteca.values();
+		for (List<Libro> libros : listasLibros) {
+			for (Libro libro : libros) {
+				if (libro.getAnio() > 2010) {
+					System.out.println("Titulo: " + libro.getTitulo());
+					System.out.println("Año: " + libro.getAnio());
+				}
 			}
 		}
 	}
@@ -89,45 +131,55 @@ public class MainBiblioteca {
 
 		}
 	}
-	
-	//+ Solicitar los datos de un libro, autor, titulo, isbn y año de publicación, 
-	//- si el autor no está en la biblioteca, solicitar la nacionalidad del autor y meterlo en la biblioteca, 
-	//- si el autor sí está ya, agregar el libro a su listado
-	
+
+	// + Solicitar los datos de un libro, autor, titulo, isbn y año de publicación,
+	// - si el autor no está en la biblioteca, solicitar la nacionalidad del autor y
+	// meterlo en la biblioteca,
+	// - si el autor sí está ya, agregar el libro a su listado
+
 	private static void pideDatosBiblioteca(Map<Autor, List<Libro>> biblioteca) {
 		String autorDeseado = Utilidades.pideDatoCadena("Introduce el autor del libro buscado: ");
 		String tituloDeseado = Utilidades.pideDatoCadena("Introduce el libro que buscas: ");
 		String isbnLibroDeseado = Utilidades.pideDatoCadena("Introduce el ISBN del libro que buscas: ");
 		int anioLibroDeseado = Integer.parseInt(Utilidades.pideDatoCadena("Introduce el ISBN del libro que buscas: "));
-		
-		Libro libroNuevo = new Libro(tituloDeseado,isbnLibroDeseado,anioLibroDeseado);
-		
-		Autor autorEncontrado = null;
-		
-		for(Autor a : biblioteca.keySet()) {
-			if(a.getNombre().equalsIgnoreCase(autorDeseado)) {
-				a = autorEncontrado;
+
+		boolean autorEncontrado = false;
+
+		for (Autor a : biblioteca.keySet()) {
+			if (a.getNombre().equalsIgnoreCase(autorDeseado)) {
+				Libro libro = new Libro(tituloDeseado, isbnLibroDeseado, anioLibroDeseado);
+				biblioteca.get(a).add(libro);
+				autorEncontrado = true;
 				break;
 			}
 		}
-		
-		if (autorEncontrado != null){
-			List <Libro>librosAutor = biblioteca.get(autorEncontrado);
-			librosAutor.add(libroNuevo);
-			System.out.println("Libro añadido al autor existente " + autorEncontrado.getNombre());
-			
-		} else {
-			String nacionalidadAutor = Utilidades.pideDatoCadena("Autor no encontrado. Introduce la nacionalidad del autor " + autorDeseado + " :");
-			
-			Autor autorNuevo = new Autor(autorDeseado,nacionalidadAutor);
-			
-			List<Libro> nuevaListaLibros = new ArrayList<>();
-			nuevaListaLibros.add(libroNuevo);
-			
-			biblioteca.put(autorNuevo, nuevaListaLibros);
-			
-			System.out.println("Autor y libro añadidos a la biblioteca: " + autorNuevo.getNombre());
+
+		if (!autorEncontrado) {
+			String nacionalidadAutor = Utilidades
+					.pideDatoCadena("Autor no encontrado. Introduce la nacionalidad del autor " + autorDeseado + " :");
+			Autor autorNuevo = new Autor(autorDeseado, nacionalidadAutor);
+			Libro libro = new Libro(tituloDeseado, isbnLibroDeseado, anioLibroDeseado);
+			biblioteca.put(autorNuevo, Arrays.asList(libro));
+
 		}
+	}
+
+	private static void borrarPorISBN(Map<Autor, List<Libro>> biblioteca) {
+		String isbnSolicitado = Utilidades.pideDatoCadena("INTRODUCE ISBN PARA ELIMINAR EL LIBRO DESEADO: ");
+
+		Collection<List<Libro>> listasLibros = biblioteca.values();
+		for (List<Libro> list : listasLibros) {
+			Iterator<List<Libro>> libros = listasLibros.iterator();
+			while (libros.hasNext()) {
+				Libro libro = libros.next();
+				if(libro.getIsbn().equals(isbnSolicitado)) {
+					libros.remove();
+				}
+				
+			}
+
+		}
+
 	}
 
 }
