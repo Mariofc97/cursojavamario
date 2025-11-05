@@ -3,6 +3,9 @@ package utils;
 import java.util.Scanner;
 
 public class Utilidades {
+	public static void main(String[] args) {
+		Utilidades.pideDatoNumerico("Introduzca un dato: ");
+	}
 
 	public static int calcularEdad (int anioNacimiento) {
 		int edad = 0;
@@ -30,12 +33,24 @@ public class Utilidades {
 	}
 	
 	public static int pideDatoNumerico (String texto) {
-		int numero=0;
-		System.out.println(texto);
-		Scanner scan = new Scanner(System.in);
-		numero = scan.nextInt();
 		
-		return numero;
+		try {
+			
+			int numero=0;
+			System.out.println(texto);
+			Scanner scan = new Scanner(System.in);
+			numero = scan.nextInt();
+			
+			return numero;
+		} catch (Exception e) {
+			System.out.println("Error general " + e.getMessage());
+			System.out.println("El dato introducido debe ser un integer");
+			
+			return pideDatoNumerico(texto);
+		}
+		// si el usuario mete un integer o algo que no sea texto, devolver una excepcion y volver a preguntar para que meta otra cosa
+		
+		
 	}
 	
 	public static String pideDatoCadena (String texto) {

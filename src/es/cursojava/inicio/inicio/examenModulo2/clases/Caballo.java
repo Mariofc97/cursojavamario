@@ -95,12 +95,22 @@ public class Caballo implements Avanzable, Imprimible, Participable {
 	@Override
 	public double calcularAvanceTurno() {
 		// TODO Auto-generated method stub
-		return 0;
+		double avance = Math.random()*100 + (Math.random()*10)*velocidad + (Math.random()*10)*experiencia - (Math.random()*4)*peso + (Math.random()*10)*this.jinete.getAniosExperiencia();
+		avance = avance<0 ? 0:avance;
+			//if (avance < 0) {
+			//	avance = 0;
+			//} else {
+	    	//avance = avance; 
+			// redundante, puedes omitir el else
+			//}
+		System.out.println("Caballo " + nombre + " avanza " + avance);
+		return avance;
 	}
 
 	@Override
 	public void aplicarAvance(double metros) {
 		// TODO Auto-generated method stub
+		this.metrosRecorridos+=metros;
 
 	}
 

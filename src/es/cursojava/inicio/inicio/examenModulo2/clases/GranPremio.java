@@ -10,30 +10,20 @@ import es.cursojava.inicio.inicio.examenModulo2.utils.UtilsCaballos;
 import utils.Utilidades;
 
 public class GranPremio {
-	
 	private String nombre;
 	private List<Carrera> carreras;
 	private List<Apostante> apostantes;
-	
-	public GranPremio(String nombre) {
-		super();
-		this.nombre = nombre;
-	}
-
-	public GranPremio(String nombre, List<Carrera> carreras, List<Apostante> apostantes) {
-		super();
-		this.nombre = nombre;
-		this.carreras = carreras;
-		this.apostantes = apostantes;
-	}
-
-
 
 	public GranPremio(String nombre, List<Carrera> carreras) {
 		super();
 		this.nombre = nombre;
 		this.carreras = carreras;
 		this.apostantes = new ArrayList<Apostante>();
+	}
+
+	public GranPremio(String nombre) {
+		super();
+		this.nombre = nombre;
 	}
 
 	public String getNombre() {
@@ -64,77 +54,125 @@ public class GranPremio {
 	public String toString() {
 		return "GranPremio [nombre=" + nombre + ", carreras=" + carreras + ", apostantes=" + apostantes + "]";
 	}
-	
-	private void crearCarreras() {
-		//Crear carreras
-		Carrera carrera1 = new Carrera("Carrera1",500);
-		Carrera carrera2 = new Carrera("Carrera2",700);
-		
-		Jinete jinete = new Jinete("Manueee",22,4);
-		Caballo caballo1 = UtilsCaballos.crearCaballoAleatorio("Pitufo", jinete);
-		Jinete jinete2 = new Jinete("Lore",25,1);
-		Caballo caballo2 = UtilsCaballos.crearCaballoAleatorio("Perdigón", jinete2);
-		Jinete jinete3 = new Jinete("Macu",27,2);
-		Caballo caballo3 = UtilsCaballos.crearCaballoAleatorio("Lightning", jinete3);
-	
-		List<Caballo> participantes = new ArrayList<>();
-		participantes.add(caballo1);
-		participantes.add(caballo2);
-		
-		Carrera carrera3 = new Carrera("Carrera3",800,participantes);
-	
-		carrera3.getCaballosParticipantes().add(caballo3);
-		// carrera3.addCaballo(caballo3);
-		
-		this.carreras = Arrays.asList(carrera1, carrera2, carrera3);
-	
-		
-	}
-	
+
 	public void init() {
 		crearCarreras();
 		this.apostantes = UtilsCaballos.crearApostantes();
 	}
-	
+
+	private void crearCarreras() {
+		// Crear carreras
+		Carrera carrera1 = new Carrera("Carrera1", 2000);
+		Carrera carrera2 = new Carrera("Carrera2", 3000);
+
+		Jinete jinete = new Jinete("Jinete1", 22, 4);
+		Caballo caballo1 = UtilsCaballos.crearCaballoAleatorio("Pitufo", jinete);
+
+		Jinete jinete2 = new Jinete("Jinete2", 20, 6);
+		Caballo caballo2 = UtilsCaballos.crearCaballoAleatorio("Perdigon", jinete2);
+
+		Jinete jinete3 = new Jinete("Jinete3", 25, 2);
+		Caballo caballo3 = UtilsCaballos.crearCaballoAleatorio("Relámpago", jinete3);
+
+		List<Caballo> caballos = Arrays.asList(caballo1, caballo2);
+		carrera1.setCaballosParticipantes(caballos);
+		carrera2.setCaballosParticipantes(caballos);
+
+		Carrera carrera3 = new Carrera("Carrera3", 3000, caballos);
+		// carrera3.addCaballo(caballo3);
+		// carrera3.getCaballosParticipantes().add(caballo3);
+
+		this.carreras = Arrays.asList(carrera1, carrera2, carrera3);
+	}
+
 	public void empezarGranPremio() {
-		System.out.println("Empezando Gran Premio " + this.nombre);
-		for (Carrera c : carreras) {
-			System.out.println("\n Empezando la carrera: " + c.getNombre());
-			Map<String,Caballo> mapaCaballos = new HashMap<>();
-			//Muestro informacion de los caballos
-			for (Caballo caballo : c.getCaballosParticipantes()) {
-				System.out.println(caballo.getNombre() + " con jinete: " + caballo.getJinete().getNombre());
-				mapaCaballos.put(caballo.getNombre(), caballo);
-			}
-			
-			// para realizar apuestas por parte de los apostantes
-			for(Apostante apostante : this.apostantes) {
-				System.out.println(apostante.getNombre() + "tienes: " + apostante.getSaldo() + " euros.");
-				String nombreCaballo = Utilidades.pideDatoCadena("Caballo por el que apuesta :");
-				Caballo caballoApostado = mapaCaballos.get(nombreCaballo);
-				double cantidad = Utilidades.pideDatoNumerico("Cantidad a apostar :");
-				
-				Apuesta apuesta = new Apuesta(apostante, caballoApostado, cantidad);
-				c.addApuesta(apuesta);
-			//iniciar carrera con el avance de los caballos
-				
-			//recoger el caballo ganador
-				
-			//comprobar si los apostantes han acertado con el caballo ganador
-			
+		System.out.println("Empezando el Gran Premio "+ this.nombre);
+		
+		for (Carrera carrera : this.carreras) {
+			try {
+				System.out.println("\nEmpezando la carrera "+carrera.getNombre() + " con "+carrera.getDistanciaObjetivo() +" metros");
+				Map<String,Caballo> mapaCaballos = mostrarInfoCaballos(carrera.getCaballosParticipantes());
+				//Los apostantes realizan sus apuestas
+				apuestas(carrera, mapaCaballos);
+				//Iniciar carrera con el avance de los caballos
+				Caballo caballoGanador = iniciarCarrera(carrera);
+				System.out.println("Mirar si los apostantes han ganado");
+				//Mirar si los apostantes han ganado
+				gestionApuestas(carrera.getApuestas(),caballoGanador);
+			}catch(Exception e) {
+				System.out.println("Error "+e.getMessage());
 			}
 		}
-	}
-	
-	public void mostrarResumen() {
+		//Resumen
 		
 	}
 	
+	/**
+	 * 
+	 * @param apuestas
+	 * @param caballoGanador
+	 */
+	private void gestionApuestas (List<Apuesta> apuestas, Caballo caballoGanador) {
+		
+		for (Apuesta apuesta : apuestas) {
+			if(apuesta.getCaballo()==caballoGanador) {
+				double importeApuesta = apuesta.getImporte()*5;
+				System.out.println("El apostante "+ apuesta.getApostante().getNombre()
+						+" ha ganado " + importeApuesta);
+				apuesta.getApostante().actualizarSaldo(importeApuesta);
+				System.out.println("El apostante "+ apuesta.getApostante().getNombre()
+						+" tiene " + apuesta.getApostante().getSaldo());
+			}
+		}
+		
+		
+	}
+	
+	private Caballo iniciarCarrera (Carrera carrera) {
+		
+		boolean carreraTerminada=false;
+		Caballo caballoGanador=null;
+		
+		do {
+			for (Caballo caballo : carrera.getCaballosParticipantes()) {
+				caballo.aplicarAvance(caballo.calcularAvanceTurno());
+				
+				if (caballo.getMetrosRecorridos()>=carrera.getDistanciaObjetivo()) {
+					carreraTerminada=true;
+					caballoGanador = caballo;
+					System.out.println("Carrera terminada, ha ganado "+caballo.getNombre());
+					break;
+				}
+			}
+			
+		}while(!carreraTerminada);
+		
+		return caballoGanador;
+	}
+	
+	//Muestro información de los caballos y devuelve mapa con los caballos y su nombre como clave
+	private Map<String,Caballo> mostrarInfoCaballos (List<Caballo> caballos) {
+		Map<String,Caballo> mapaCaballos = new HashMap<>();
+		for (Caballo caballo : caballos) {
+			System.out.println("\tCaballo " + caballo.getNombre() + " con el jinete: " + caballo.getJinete().getNombre());
+			mapaCaballos.put(caballo.getNombre(),caballo);
+		}
+		return mapaCaballos;
+	}
+	
+	public void apuestas (Carrera carrera, Map<String,Caballo> mapaCaballos) {
+		for(Apostante apostante : this.apostantes) {
+			System.out.println(apostante.getNombre() + " tienes " +apostante.getSaldo());
+			String nombreCaballo = Utilidades.pideDatoCadena("Caballo por el que apuestas");
+			Caballo caballoApostado = mapaCaballos.get(nombreCaballo);
+			double cantidad = Utilidades.pideDatoNumerico("Cantidad a apostar");
+			
+			apostante.actualizarSaldo(-cantidad);
+			System.out.println("El apostante se queda con "+apostante.getSaldo());
+			Apuesta apuesta = new Apuesta(apostante,caballoApostado, cantidad);
+			carrera.addApuesta(apuesta);
+		}
+	}
 	
 	
-	
-	
-	
-	
-
 }
