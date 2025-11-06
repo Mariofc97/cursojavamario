@@ -1,11 +1,9 @@
 package utils;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Utilidades {
-	public static void main(String[] args) {
-		Utilidades.pideDatoNumerico("Introduzca un dato: ");
-	}
 
 	public static int calcularEdad (int anioNacimiento) {
 		int edad = 0;
@@ -50,6 +48,30 @@ public class Utilidades {
 		}
 		// si el usuario mete un integer o algo que no sea texto, devolver una excepcion y volver a preguntar para que meta otra cosa
 		
+		
+	}
+	
+	public static double pideDatoDecimal (String texto) {
+		double numero=0;
+		boolean hayError;
+		do {
+			
+			System.out.println(texto);
+			Scanner scan = new Scanner(System.in);
+			
+			try {
+				numero = scan.nextDouble();
+				hayError=false;
+			}catch(InputMismatchException ime) {
+				hayError=true;
+				System.out.println("Valor introducido no correcto");
+			}finally {
+				scan.close();
+			}
+			
+		}while(hayError);
+		
+		return numero;
 		
 	}
 	
