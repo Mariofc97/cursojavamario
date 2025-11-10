@@ -1,29 +1,87 @@
 package es.cursojava.excepciones.ejercicios;
 
-public class Alumno {
+import java.util.Arrays;
 
+public class Alumno {
+	//Variables de instancia
+	static int numero;
 	private String nombre;
+	private String dni;
+	private double notaMedia=10;
+	private String[] asignaturas;
 	private int edad;
-	private double nota;
 	
-	public Alumno(String nombre, int edad, double nota) throws IllegalArgumentException,NotaInvalidaException {
-		super();
-		this.nombre = nombre;
-		this.edad = edad;
-		comprobadorEdad();
-		this.nota = nota;
-		comprobadorNota();
+	//Constructores
+	public Alumno() {
 		
 	}
+	
+	public Alumno(String nombre, String dni) {
+		this.nombre = nombre;
+		this.dni = dni;
+	}
+	
+	public Alumno(String nombre, String dni, double notaMedia, 
+			String[] asignaturas, int edad) throws NotaInvalidaException{
+		super();
+		
+		if (edad<=0) {
+			throw new IllegalArgumentException("Edad no valida");
+		}else if (notaMedia<0 || notaMedia>10 ) {
+			throw new NotaInvalidaException("Nota fuera de rango correcto (0-10)");
+		}
+		
+		
+		this.nombre = nombre;
+		this.dni = dni;
+		this.notaMedia = notaMedia;
+		this.asignaturas = asignaturas;
+		this.edad = edad;
+	}
 
+	public Alumno(String nombre, String dni, double notaMedia, String[] asignaturas) {
+		//this(nombre,dni,notaMedia,asignaturas, 0);
+		this.nombre = nombre;
+		this.dni = dni;
+		this.notaMedia = notaMedia;
+		this.asignaturas = asignaturas;
+	}
+
+	public Alumno(String nombre, String dni, double notaMedia) {
+		super();
+		this.nombre = nombre;
+		this.dni = dni;
+		this.notaMedia = notaMedia;
+	}
+	
+	//Métodos GET y SET
 	public String getNombre() {
 		return nombre;
 	}
-
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
+	public String getDni() {
+		return dni;
+	}
+	public void setDni(String dni) {
+		this.dni = dni;
+	}
+	public double getNotaMedia() {
+		return notaMedia;
+	}
+	public void setNotaMedia(double notaMedia) {
+		this.notaMedia = notaMedia;
+	}
+	public String[] getAsignaturas() {
+		return asignaturas;
+	}
+	public void setAsignaturas(String[] asignaturas) {
+		this.asignaturas = asignaturas;
+	}
+	
+	
+	
 	public int getEdad() {
 		return edad;
 	}
@@ -32,44 +90,35 @@ public class Alumno {
 		this.edad = edad;
 	}
 
-	@Override
-	public String toString() {
-		return "Alumno [nombre=" + nombre + ", edad=" + edad + "]";
+	public void metodo1() {
+		
 	}
 	
-	// TODO: DEBO DE HACER EL THROW, NO AQUI, SI NO DIRECTAMENTE LUEGO EN EL MAIN DONDE LLAME AL METODO
 	
-	private void comprobadorEdad() throws IllegalArgumentException{
-			if(this.edad<0) {
-				IllegalArgumentException iae = new IllegalArgumentException("La edad debe ser mayor de 0");
-				try {
-					throw iae;
-				} catch (IllegalArgumentException e) {
-					System.out.println(e.getMessage());
-				}
-			} else {
-				this.edad = edad;
-			}
-	}
-	
-	// TODO: DEBO DE HACER EL THROW, NO AQUI, SI NO DIRECTAMENTE LUEGO EN EL MAIN DONDE LLAME AL METODO
-	
-	private void comprobadorNota() throws NotaInvalidaException{
-		if(this.nota < 0.0 || this.nota>10.0) {
-			NotaInvalidaException nie = new NotaInvalidaException("La nota debe ser un valor entre 0 y 10");
-			try {
-				throw nie;
-			} catch (NotaInvalidaException e) {
-				System.out.println(e.getMessage());
-			}
-		} else {
-			this.nota = nota;
+	//Métodos de instancia
+	public void estudiar () {
+
+		System.out.println("El estudiante "+ nombre +
+				" tiene las asignaturas "+Arrays.toString(asignaturas));
+		
+		if (this.notaMedia<5) {
+			System.out.println("Ha estudiado poco");
+		}else if (this.notaMedia>9) {
+			System.out.println("Es un genio");
+		}else {
+			System.out.println("Ha estudiado mucho");
 		}
 	}
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Alumno [nombre=" + nombre + ", dni=" + dni + ", notaMedia=" + notaMedia + ", asignaturas="
+				+ Arrays.toString(asignaturas) + ", edad=" + edad + "]";
+	}
+
+
 	
 	
 	
 }
+
