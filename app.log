@@ -488,3 +488,15 @@
 11:47:27.421 [main] INFO  es.cursojava.inicio.hipodromo.HipodromoMain - Trueno -> 0 victorias
 11:47:27.422 [main] INFO  es.cursojava.inicio.hipodromo.HipodromoMain - Spirit -> 1 victorias
 11:47:27.422 [main] INFO  es.cursojava.inicio.hipodromo.HipodromoMain - Volt -> 1 victorias
+17:24:27.402 [main] ERROR es.cursojava.ficheros.EmpezandoConFicheros - Error al crear el fichero C:\Users\Tardes\Ficherosss\fichero2.txt: El sistema no puede encontrar la ruta especificada
+java.io.IOException: El sistema no puede encontrar la ruta especificada
+	at java.base/java.io.WinNTFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(WinNTFileSystem.java:536)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at es.cursojava.ficheros.EmpezandoConFicheros.main(EmpezandoConFicheros.java:49)
+17:53:50.119 [main] ERROR es.cursojava.ficheros.EmpezandoConFicheros - Error al crear el fichero C:\Users\Tardes\Ficherosss\fichero2.txt: El sistema no puede encontrar la ruta especificada
+java.io.IOException: El sistema no puede encontrar la ruta especificada
+	at java.base/java.io.WinNTFileSystem.createFileExclusively0(Native Method)
+	at java.base/java.io.WinNTFileSystem.createFileExclusively(WinNTFileSystem.java:536)
+	at java.base/java.io.File.createNewFile(File.java:1045)
+	at es.cursojava.ficheros.EmpezandoConFicheros.main(EmpezandoConFicheros.java:50)
