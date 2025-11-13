@@ -8,6 +8,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
+
+
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,16 +21,34 @@ import java.util.Scanner;
 //nombre_yyyymmdd.txt
 public class ArchivoServicio {
 
+	// tres metodos diferentes para crear archivos y otros tres metodos para leer
+	// los archivos
+
 	public void crearArchivo(String nombre) {
-		File archivo = new File(nombre);
+		File archivo = new File(nombre); // se crea un objeto de tipo file
+		// la clase FileWrite nos obliga a controlar una excepcion IOException, ya que
+		// en el constructor de la clase FileWriter se lanza una excepcion
+		System.out.println("crearArchivo nombre: " + nombre);
+		if (archivo.exists()) {
+			try {
+				archivo.createNewFile();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		try (FileWriter fw = new FileWriter(archivo, true); // con ese true le estamos diciendo si queremos
-															// sobreescribir el archivo o ponerlo a modo de append,
-															// añadido al contenido del archivo
+															// añadir texto a modo de append,
+															// añadido al contenido del archivo y si ponemos false, va a
+															// sobreescribir todo el archivo, borrando lo anterior, por
+															// el texto que le pases
+
 				BufferedWriter buffer = new BufferedWriter(fw);) {
 
 			buffer.append("Hola que tal amigos!\n").append("Todo bien? yo escribiendo en un archivo...\n")
 					.append("Hasta luego Lucas!\n");
-			// buffer.close();
+			// buffer.close(); // hay que mirar si tiene el metodo closeable, en este caso
+			// si tiene la interfaz closeable(), por eso esta comentada esta linea de código
 			System.out.println("El archivo se ha creado con éxito!");
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -65,7 +86,8 @@ public class ArchivoServicio {
 	public void crearArchivo2(String nombre) {
 		File archivo = new File(nombre);
 
-		try (PrintWriter buffer = new PrintWriter(archivo)) {
+		try (PrintWriter buffer = new PrintWriter(archivo)) { // este sobreescribe directamente el contenido de todo el
+																// archivo
 			// try (PrintWriter buffer = new PrintWriter(new FileWriter(archivo))){
 
 			buffer.println("Hola que tal amigos!");
@@ -78,12 +100,15 @@ public class ArchivoServicio {
 		}
 	}
 
-	public void crearArchivo3(String nombreFichero) {
-		Path ruta = Paths.get(nombreFichero);
+	public void crearArchivo3(String nombreFichero) { // solo sobreescribe las lineas que le pases, pero si el archivo
+														// tenia mas lineas escritas, el resto se mantienen!
+		Path ruta = Paths.get(nombreFichero); // Path es la version moderna de File
 		String contenido = "Hola, mundo!\nEste es un ejemplo usando java.nio.";
 		try {
-			Files.write(ruta, contenido.getBytes(StandardCharsets.UTF_8), StandardOpenOption.CREATE,
-					StandardOpenOption.WRITE);
+			Files.write(ruta, contenido.getBytes(StandardCharsets.UTF_8), // convierte el texto a bytes usando
+																			// codificacion UTF-8
+					StandardOpenOption.CREATE, // crea el fichero si no existe, si existe da una excepcion
+					StandardOpenOption.WRITE); // lo abre para escribir (si existe lo sobreescribe por defecto)
 			System.out.println("Escritura completada.");
 		} catch (IOException e) {
 			e.printStackTrace();
