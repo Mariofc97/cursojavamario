@@ -14,8 +14,8 @@ public class ConexionBaseDatos {
 
 
     private static void conectaOracle() {
-		String url_oracle = "jdbc:oracle:thin:getafe/password@//localhost:1522/XEPDB1";	
-		String url_oracle2 = "jdbc:oracle:thin:@//localhost:1522/XEPDB1";
+		String url_oracle = "jdbc:oracle:thin:getafe/password@//localhost:1521/XEPDB1";	
+		String url_oracle2 = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";
 		String username = "getafe";
 		String password = "password";
 
@@ -47,8 +47,8 @@ public class ConexionBaseDatos {
 	
 	
 	private static void conectaOracle2() {
-		String url_oracle = "jdbc:oracle:thin:getafesql/password@localhost:1522:XE";
-		String url_oracle2 = "jdbc:oracle:thin:@localhost:1522:XE";
+		String url_oracle = "jdbc:oracle:thin:getafesql/password@localhost:1521:XE";
+		String url_oracle2 = "jdbc:oracle:thin:@localhost:1521:XE";
 		String username = "getafesql";
 		String password = "password";
 		try {
