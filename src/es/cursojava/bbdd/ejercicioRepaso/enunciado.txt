@@ -1,0 +1,138 @@
+1) Crear directorios de forma segura (ruta relativa)
+Enunciado
+
+Crea una clase ExportadorProductos que tenga un método:
+
+public static Path crearDirectorioExportacion()
+
+
+que haga lo siguiente:
+
+Construya una ruta relativa dentro del proyecto, por ejemplo:
+recursos/exportaciones
+(no uses rutas absolutas tipo C:\...).
+
+Si el directorio no existe, lo cree (incluyendo subdirectorios necesarios).
+
+Devuelva el Path del directorio creado o existente.
+
+Muestre un mensaje por consola indicando la ruta final usada.
+
+Pista: puedes usar Files.exists(path) y Files.createDirectories(path).
+
+2) Generar un fichero de productos con fecha en el nombre
+Enunciado
+
+Añade un método:
+
+public static Path exportarProductosAArchivo(List<Producto> productos, Path directorioDestino)
+
+
+que:
+
+Genere un nombre de fichero del estilo:
+productos_YYYYMMDD.txt
+(por ejemplo: productos_20251117.txt).
+
+Cree el archivo dentro del directorioDestino recibido.
+
+Escriba una línea por producto con el mismo formato que ya usas:
+
+id|nombre|categoria|precio|stock|fecha_alta|estado|codigo_sku|creado_por|iva
+
+
+Devuelva el Path del fichero creado.
+
+Pista: para la fecha, puedes usar LocalDate.now() + DateTimeFormatter.ofPattern("yyyyMMdd").
+Para la ruta: directorioDestino.resolve(nombreFichero).
+
+3) Leer el fichero generado y reconstruir objetos Producto
+Enunciado
+
+Crea un método:
+
+public static List<Producto> leerProductosDesdeArchivo(Path fichero)
+
+
+que:
+
+Lea el fichero línea a línea (usa BufferedReader o Files.readAllLines).
+
+Para cada línea haga split("\\|").
+
+Convierta cada parte al tipo correcto y cree un Producto.
+
+Devuelva una List<Producto> con todos los productos leídos.
+
+4) Guardar los productos leídos en un Map y buscar por ID HECHO
+Enunciado
+
+Usando la lista devuelta en el punto anterior:
+
+Construye un Map<Integer, Producto> donde la clave sea el id.
+
+Pide por consola al usuario (Scanner) un id de producto.
+
+Si existe en el mapa, muestra el producto.
+
+Si no existe, muestra un mensaje “No se ha encontrado el producto con id X”.
+
+5) Estadísticas y contador de líneas
+Enunciado
+
+Con la lista de productos leídos del fichero:
+
+Muestra por consola:
+
+Número total de productos.
+
+Número de productos por categoría.
+
+Número de productos con stock = 0.
+
+Muestra también:
+
+“Este fichero tiene N líneas de productos útiles”.
+
+Pista: el número de líneas del fichero debería coincidir con productos.size()
+si has escrito exactamente una línea por producto.
+
+6) Menú interactivo para combinar todo
+Enunciado
+
+Crea un main en ExportadorProductos que ofrezca un menú tipo:
+
+1. Leer productos de la BD y exportar a fichero
+2. Leer productos desde el último fichero generado
+3. Buscar producto por ID en el fichero
+4. Mostrar estadísticas del fichero (totales, por categoría, etc.)
+0. Salir
+
+
+La opción 1 debería:
+
+llamar a tu método JDBC que obtiene List<Producto> desde la BD,
+
+llamar a crearDirectorioExportacion(),
+
+llamar a exportarProductosAArchivo(...).
+
+La opción 2 debería:
+
+pedir el nombre del fichero o usar el último Path guardado,
+
+llamar a leerProductosDesdeArchivo(...).
+
+La opción 3:
+
+lee de fichero,
+
+construye un Map<Integer, Producto>,
+
+pide ID por consola y busca.
+
+La opción 4:
+
+lee de fichero,
+
+calcula estadísticas.

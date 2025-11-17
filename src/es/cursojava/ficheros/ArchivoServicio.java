@@ -127,7 +127,7 @@ public class ArchivoServicio {
 		// }
 
 		try (BufferedReader reader = new BufferedReader(new FileReader(archivo))) {
-
+			// flush, le pasa todo el contenido del fichero y lo cierra, un buffer tiene un flush
 			String linea;
 			while ((linea = reader.readLine()) != null) {
 				sb.append(linea).append("\n");
@@ -156,6 +156,8 @@ public class ArchivoServicio {
 		return sb.toString();
 	}
 
+	//contar cuantas lineas aparecen, o hacer un mapa con las lineas que estamos recogiendo
+	// este es el mas sencillo, lanzaria una excepcion que despues debemos controlar
 	public String leerArchivo3(String nombre) throws IOException {
 		Path path = Paths.get(nombre);
 		StringBuilder sb = new StringBuilder();

@@ -500,3 +500,8 @@ java.io.IOException: El sistema no puede encontrar la ruta especificada
 	at java.base/java.io.WinNTFileSystem.createFileExclusively(WinNTFileSystem.java:536)
 	at java.base/java.io.File.createNewFile(File.java:1045)
 	at es.cursojava.ficheros.EmpezandoConFicheros.main(EmpezandoConFicheros.java:50)
+18:38:54.500 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Directorio creado {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones
+19:44:10.202 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones\productos_20251117.txt
+19:53:48.086 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones\productos_20251117.txt
+20:30:58.025 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones\productos_20251117.txt
+20:34:27.931 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones\productos_20251117.txt

@@ -105,6 +105,7 @@ public class MapeoProductos {
     
     public static void buscarPorId(Map<Integer,Producto> mapaProductos) {
     	Scanner scan = new Scanner(System.in);
+    	System.out.println("Introduce un integer Id: ");
     	int id = scan.nextInt();
     	
     	Producto productoEncontrado = mapaProductos.get(id);
