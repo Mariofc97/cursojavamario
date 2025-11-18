@@ -505,3 +505,116 @@ java.io.IOException: El sistema no puede encontrar la ruta especificada
 19:53:48.086 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones\productos_20251117.txt
 20:30:58.025 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones\productos_20251117.txt
 20:34:27.931 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Tardes\eclipse-workspace\ProyectoJava\ProyectoJavaMario\recursos\exportaciones\productos_20251117.txt
+11:02:46.184 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Jesús\git\cursojavamario\recursos\exportaciones\productos_20251118.txt
+11:02:53.791 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Numero total de productos: 5
+11:02:53.793 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Numero de productos sin stock : 1
+11:02:53.793 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Categoria DEPORTE, numero de productos: 1
+11:02:53.793 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Categoria HOGAR, numero de productos: 2
+11:02:53.793 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Categoria TECNOLOGIA, numero de productos: 2
+11:02:53.806 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - El fichero C:\Users\Jesús\git\cursojavamario\recursos\exportaciones\productos_20251118.txt tiene 5 líneas
+11:43:21.290 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+11:43:30.250 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+11:44:59.813 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+11:45:02.349 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Saliendo del menu...
+12:06:39.032 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:06:55.437 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:07:11.156 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Primero debes cargar productos desde la opcion 1 y generar el directorio y archivo desde la opcion 2
+12:07:11.157 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:07:14.788 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Todavía no se ha exportado ningún fichero. Usa la opción 2.
+12:07:14.788 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:07:19.713 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.ExportadorProductos - Archivo creado en el directorio {}C:\Users\Jesús\git\cursojavamario\recursos\exportaciones\productos_20251118.txt
+12:07:19.714 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:07:33.282 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - El fichero C:\Users\Jesús\git\cursojavamario\recursos\exportaciones\productos_20251118.txt tiene 5 líneas
+12:07:33.284 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - El fichero tiene 5 líneas
+12:07:33.284 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:07:50.188 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Numero total de productos: 5
+12:07:50.189 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Numero de productos sin stock : 1
+12:07:50.189 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Categoria DEPORTE, numero de productos: 1
+12:07:50.189 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Categoria HOGAR, numero de productos: 2
+12:07:50.189 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - Categoria TECNOLOGIA, numero de productos: 2
+12:07:50.189 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:08:00.195 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.EstadisticasProducto - El fichero C:\Users\Jesús\git\cursojavamario\recursos\exportaciones\productos_20251118.txt tiene 5 líneas
+12:08:00.196 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - El fichero tiene 5 líneas
+12:08:00.196 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:08:09.268 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:08:15.804 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Menu
+1.Cargar productos desde BBDD.
+2.Exportar productos a fichero.
+3.Mostrar estadísticas de productos en memoria.
+4.Contar lineas del fichero exportado.
+5.Buscar producto por ID.
+6.Salir 
+12:08:20.259 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Saliendo del menu...
+12:08:20.259 [main] INFO  es.cursojava.bbdd.ejercicioRepaso.MainMenu - Hasta otra!
