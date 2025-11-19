@@ -15,6 +15,12 @@
       <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n</pattern>
     </encoder>
   </appender>
+  
+  	<!-- Sólo errores de Hibernate -->
+	<logger name="org.hibernate" level="ERROR" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
+  
 
   <!-- Nivel por defecto -->
   <root level="debug">
