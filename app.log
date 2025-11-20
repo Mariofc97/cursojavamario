@@ -19880,3 +19880,5 @@ Caused by: java.lang.ClassNotFoundException: jakarta.el.ExpressionFactory
 20:30:48.312 [main] DEBUG org.hibernate.internal.SessionFactoryImpl - Instantiated SessionFactory
 20:30:48.358 [main] DEBUG org.hibernate.stat.internal.StatisticsInitiator - Statistics initialized [enabled=false]
 20:50:30.772 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+16:45:25.538 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+16:47:07.237 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
