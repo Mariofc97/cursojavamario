@@ -40,6 +40,12 @@ public class HibernateMain {
 				System.out.println(empresa);
 			}
         } catch (Throwable ex) {
+        	try {
+        		tx.rollback();
+        	} catch (NullPointerException e){
+        		System.out.println("Transaccion no creada");
+        		
+        	}
             System.err.println("Error al crear la SessionFactory." + ex);
             throw new ExceptionInInitializerError(ex);
         }

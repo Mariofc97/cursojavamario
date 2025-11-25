@@ -1,4 +1,4 @@
-package es.cursojava.hibernate.ejercicios;
+package es.cursojava.hibernate.ejercicios.ejercicio1;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -8,8 +8,8 @@ import utils.UtilidadesHibernate;
 public class MainCursos {
 
 	public static void main(String[] args) {
-		UtilidadesHibernate.crearConexion();
-		insertarCursosEjemplo();
+	    UtilidadesHibernate.crearConexion();
+	    insertarCursosEjemplo();
 	}
 	
 	private static void insertarCursosEjemplo() {

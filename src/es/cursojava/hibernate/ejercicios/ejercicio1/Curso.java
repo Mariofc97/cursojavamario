@@ -1,4 +1,4 @@
-package es.cursojava.hibernate.ejercicios;
+package es.cursojava.hibernate.ejercicios.ejercicio1;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
