@@ -19882,3 +19882,94 @@ Caused by: java.lang.ClassNotFoundException: jakarta.el.ExpressionFactory
 20:50:30.772 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
 16:45:25.538 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
 16:47:07.237 [main] DEBUG org.jboss.logging - Logging Provider: org.jboss.logging.Slf4jLoggerProvider
+16:58:08.412 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+16:58:08.416 [main] INFO  es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - Línea 1: JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+16:58:08.417 [main] INFO  es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - Línea 2: JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+16:58:08.417 [main] INFO  es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - Línea 3: JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+16:58:08.417 [main] INFO  es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - Línea 4: SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+16:58:08.417 [main] INFO  es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - Línea 5: SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+16:58:08.417 [main] INFO  es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - Línea 6: GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+16:58:08.417 [main] INFO  es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - La palabra java aparece en 0 lineas
+16:59:32.615 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+17:00:14.866 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerFichero - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+17:37:33.924 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+17:51:20.543 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+17:53:16.841 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+17:57:02.121 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+18:01:30.090 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+18:02:38.702 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+18:06:39.312 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+19:06:18.909 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+
+19:21:47.005 [main] DEBUG es.cursojava.hibernate.ejercicios.ejercicio2.LeerProductos - JAVA_BASICO|Introducción a la Programación en Java|Curso inicial de Java para aprender la sintaxis básica y estructuras de control.|40|true|Básico|Programación|199.00|2025-01-15|2025-02-15
+JAVA_OO|Programación Orientada a Objetos con Java|Profundiza en clases, objetos, herencia y polimorfismo aplicados en Java.|30|true|Intermedio|Programación|220.00|2025-02-20|2025-03-20
+JAVA_HIBERNATE|Acceso a Datos con Hibernate|Aprende a mapear entidades y realizar operaciones CRUD con Hibernate y JPA.|30|true|Intermedio|Acceso a Datos|250.00|2025-03-10|2025-04-05
+SPRING_BOOT_API|APIs REST con Spring Boot|Diseño y desarrollo de servicios RESTful usando Spring Boot y buenas prácticas.|50|true|Avanzado|Backend|320.00|2025-04-01|2025-05-10
+SQL_BASICO|Fundamentos de Bases de Datos y SQL|Introducción al modelo relacional y consultas básicas en SQL.|25|true|Básico|Bases de Datos|180.00|2025-01-20|2025-02-10
+GIT_DEV|Control de Versiones con Git y GitHub|Uso práctico de Git para trabajo en equipo y gestión de repositorios en GitHub.|15|true|Básico|Herramientas|90.00|2025-02-05|2025-02-20
+

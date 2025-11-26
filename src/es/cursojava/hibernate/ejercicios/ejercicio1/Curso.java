@@ -3,6 +3,8 @@ package es.cursojava.hibernate.ejercicios.ejercicio1;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -42,6 +44,7 @@ public class Curso {
 	private double precio; // Opcional debe ser mayor o igual que 0
 	private LocalDate fecha_inicio; // Opcional
 	private LocalDate fecha_fin; // Opcional, debe ser posterior a la fecha de inicio
+	@CreationTimestamp
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime fecha_creacion; //Obligatorio, se establece automaticamente con la fecha y hora actuales
 	
@@ -84,6 +87,23 @@ public class Curso {
 		this.fecha_inicio = fecha_inicio;
 		this.fecha_fin = fecha_fin;
 		this.fecha_creacion = fecha_creacion;
+	}
+	
+	public Curso(@NotBlank String codigo, @NotBlank String nombre, String descripcion, @Positive int horas_totales,
+			boolean activo, @Pattern(regexp = "Basico|Intermedio|Avanzado") String nivel, String categoria,
+			@PositiveOrZero double precio, LocalDate fecha_inicio, LocalDate fecha_fin) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.horas_totales = horas_totales;
+		this.activo = activo;
+		this.nivel = nivel;
+		this.categoria = categoria;
+		this.precio = precio;
+		isFechaFinPosteriorAInicio();
+		this.fecha_inicio = fecha_inicio;
+		this.fecha_fin = fecha_fin;
 	}
 
 	public long getId() {
@@ -190,6 +210,16 @@ public class Curso {
         }
         return fecha_fin.isAfter(fecha_inicio);
     }
+
+	@Override
+	public String toString() {
+		return "Curso [id=" + id + ", codigo=" + codigo + ", nombre=" + nombre + ", descripcion=" + descripcion
+				+ ", horas_totales=" + horas_totales + ", activo=" + activo + ", nivel=" + nivel + ", categoria="
+				+ categoria + ", precio=" + precio + ", fecha_inicio=" + fecha_inicio + ", fecha_fin=" + fecha_fin
+				+ ", fecha_creacion=" + fecha_creacion + "]";
+	}
+    
+    
 	
 	
 }

@@ -11,6 +11,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -26,7 +27,8 @@ public class Curso implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // si ponemos SEQUENCE EN VEZ DE IDENTITY vamos a crear una secuencia propia.
+    @SequenceGenerator(name = "curso_seq", sequenceName = "SEQ_CURSO", allocationSize = 1) // el primero es el nombre del generador y el segundo es el nombre de la secuencia
     private Long id; // obligatorio, PK, autoincremental
 
     @NotNull
@@ -35,10 +37,10 @@ public class Curso implements Serializable {
     @Column(name = "codigo", nullable = false, unique = true, length = 20)
     private String codigo; // obligatorio, único, max 20
 
-    @NotNull
-    @NotBlank
-    @Size(max = 100)
-    @Column(name = "nombre", nullable = false, length = 100)
+    @NotNull // validaciones que no son necesarias para la creacion de la columna en la base de datos
+    @NotBlank // validaciones que no son necesarias para la creacion de la columna en la base de datos
+    @Size(max = 100) // validaciones que no son necesarias para la creacion de la columna en la base de datos
+    @Column(name = "nombre", nullable = false, length = 100) // este campo es absolutamente necesario para esta columna en la base de datos
     private String nombre; // obligatorio, no vacío, max 100
 
     @Size(max = 1000)

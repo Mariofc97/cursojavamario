@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Curso;
+import utils.UtilidadesHibernate;
 
 
 public class CursoDAO {
@@ -14,7 +15,7 @@ public class CursoDAO {
 	private Transaction transaction;
 	
 	public CursoDAO() {
-		session = HibernateUtil.getSessionFactory();
+		session = UtilidadesHibernate.getSessionFactory();
 		transaction = session.beginTransaction();
 	}
 	
