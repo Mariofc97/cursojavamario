@@ -27,8 +27,8 @@ public class Curso implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE) // si ponemos SEQUENCE EN VEZ DE IDENTITY vamos a crear una secuencia propia.
-    @SequenceGenerator(name = "curso_seq", sequenceName = "SEQ_CURSO", allocationSize = 1) // el primero es el nombre del generador y el segundo es el nombre de la secuencia
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "curso_seq")
+    @SequenceGenerator(name = "curso_seq", sequenceName = "SEQ_CURSO", allocationSize = 1)
     private Long id; // obligatorio, PK, autoincremental
 
     @NotNull
@@ -37,10 +37,10 @@ public class Curso implements Serializable {
     @Column(name = "codigo", nullable = false, unique = true, length = 20)
     private String codigo; // obligatorio, único, max 20
 
-    @NotNull // validaciones que no son necesarias para la creacion de la columna en la base de datos
-    @NotBlank // validaciones que no son necesarias para la creacion de la columna en la base de datos
-    @Size(max = 100) // validaciones que no son necesarias para la creacion de la columna en la base de datos
-    @Column(name = "nombre", nullable = false, length = 100) // este campo es absolutamente necesario para esta columna en la base de datos
+    @NotNull
+    @NotBlank
+    @Size(max = 100)
+    @Column(name = "nombre", nullable = false, length = 100)
     private String nombre; // obligatorio, no vacío, max 100
 
     @Size(max = 1000)
@@ -89,8 +89,43 @@ public class Curso implements Serializable {
         this.horasTotales = horasTotales;
         this.activo = Boolean.TRUE;
     }
+    
+    public Curso(String codigo, String nombre, Integer horasTotales, @Size(max = 50) String categoria, LocalDate fechaInicio) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.horasTotales = horasTotales;
+        this.activo = Boolean.TRUE;
+        this.categoria = categoria;
+        this.fechaInicio = fechaInicio;
+    }
 
-    // Getters and setters
+    
+    
+    public Curso(@NotNull @NotBlank @Size(max = 20) String codigo,
+			@NotNull @NotBlank @Size(max = 100) String nombre, 
+			@Size(max = 1000) String descripcion,
+			@NotNull @Min(1) Integer horasTotales, 
+			@NotNull Boolean activo, 
+			@Size(max = 20) String nivel,
+			@Size(max = 50) String categoria, 
+			@PositiveOrZero BigDecimal precio, 
+			LocalDate fechaInicio,
+			LocalDate fechaFin) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.horasTotales = horasTotales;
+		this.activo = activo;
+		this.nivel = nivel;
+		this.categoria = categoria;
+		this.precio = precio;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+		this.fechaCreacion = fechaCreacion;
+	}
+
+	// Getters and setters
     public Long getId() {
         return id;
     }

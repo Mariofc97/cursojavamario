@@ -62,3 +62,8 @@ En métodos distintos
 	+ Insertar 3 o 4 cursos
 	+ Mostrar los datos de los cursos
 	+ Mostrar los datos de los cursos activos
+	-Informacion de un curso por su codigo
+	-Informacion de cursos por categoria y fecha inicio 01/02/2025
+	-Informacion de todos los cursos por nivel, por horas > y fecha inicio
+	
+	

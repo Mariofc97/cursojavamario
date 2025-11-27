@@ -25,6 +25,7 @@ public class UtilidadesHibernate {
 		}
 	}
 	
+	// patron singleton, un patron que se crea una sola vez en memoria
 	private static Session getSession() {
         SessionFactory sessionFactory = new Configuration()
                 .configure() // Carga hibernate.cfg.xml
