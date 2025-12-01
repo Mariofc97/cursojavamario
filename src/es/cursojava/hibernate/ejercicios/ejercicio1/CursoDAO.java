@@ -8,15 +8,15 @@ public class CursoDAO {
 	
 	private Session session;
 
-	public void guardarCurso(Curso curso) {
+	public void guardarCurso(CursoMario curso) {
 		session.persist(curso);
 	}
 	
-	public void eliminarCurso(Curso curso) {
+	public void eliminarCurso(CursoMario curso) {
 		
 	}
 	
-	public void actualizarCurso(Curso curso) {
+	public void actualizarCurso(CursoMario curso) {
 		
 	}
 	
@@ -24,8 +24,8 @@ public class CursoDAO {
 		
 	}
 	
-	public List<Curso> obtenerTodosLosCursos() {
-		return session.createQuery("from Curso", Curso.class).list();
+	public List<CursoMario> obtenerTodosLosCursos() {
+		return session.createQuery("from Curso", CursoMario.class).list();
 	}
 	
 	

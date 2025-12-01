@@ -11,7 +11,7 @@ import org.hibernate.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import es.cursojava.hibernate.ejercicios.ejercicio1.Curso;
+import es.cursojava.hibernate.ejercicios.ejercicio1.CursoMario;
 import utils.Utilidades;
 import utils.UtilidadesHibernate;
 
@@ -26,13 +26,13 @@ public class LeerProductos {
 		try {
 			log.debug(servicio.leerArchivo3(nombreArchivo));
 			insertarProductosDesdeArchivo(nombreArchivo);
-			List<Curso> cursos = obtenerTodosLosCursos();
-			for (Curso curso : cursos) {
+			List<CursoMario> cursos = obtenerTodosLosCursos();
+			for (CursoMario curso : cursos) {
 				System.out.println(curso);
 			}
 			
 			eliminarCursoPorId();
-			for (Curso curso : cursos) {
+			for (CursoMario curso : cursos) {
 				System.out.println(curso);
 			}
 			
@@ -48,7 +48,7 @@ public class LeerProductos {
 		System.out.println("Insertando productos desde archivo");
 		ArchivoServicio servicio = new ArchivoServicio();
 
-		List<Curso> cursos = new ArrayList<>();
+		List<CursoMario> cursos = new ArrayList<>();
 
 		try {
 
@@ -73,7 +73,7 @@ public class LeerProductos {
 				LocalDate fechaInicio = LocalDate.parse(partes[8]);
 				LocalDate fechaFin = LocalDate.parse(partes[9]);
 
-				Curso curso = new Curso(codigo, nombre, descripcion, duracion, activo, nivel, categoria, precio,
+				CursoMario curso = new CursoMario(codigo, nombre, descripcion, duracion, activo, nivel, categoria, precio,
 						fechaInicio, fechaFin);
 				session.persist(curso);
 				cursos.add(curso);
@@ -88,9 +88,9 @@ public class LeerProductos {
 
 	}
 
-	public static List<Curso> obtenerTodosLosCursos() {
+	public static List<CursoMario> obtenerTodosLosCursos() {
 
-		return UtilidadesHibernate.getSessionFactory().createQuery("from Curso", Curso.class).list();
+		return UtilidadesHibernate.getSessionFactory().createQuery("from Curso", CursoMario.class).list();
 
 	}
 	
@@ -104,7 +104,7 @@ public class LeerProductos {
 			Transaction tx = session.beginTransaction();
 			
 			try {
-				Curso curso = session.get(Curso.class, id);
+				CursoMario curso = session.get(CursoMario.class, id);
 				if (curso != null) {
 					session.remove(curso);
 					tx.commit();

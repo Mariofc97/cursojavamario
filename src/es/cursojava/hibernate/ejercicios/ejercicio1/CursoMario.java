@@ -17,7 +17,7 @@ import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
 
 @Entity
-public class Curso {
+public class CursoMario {
 	// esto es para señalar a Hibernate cual sera la primary Key.
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,11 +48,11 @@ public class Curso {
 	@Column(nullable = false, updatable = false)
 	private LocalDateTime fecha_creacion; //Obligatorio, se establece automaticamente con la fecha y hora actuales
 	
-	public Curso() {
+	public CursoMario() {
 		super();
 	}
 
-	public Curso(long id, @NotBlank String codigo, @NotBlank String nombre, String descripcion,
+	public CursoMario(long id, @NotBlank String codigo, @NotBlank String nombre, String descripcion,
 			@Positive int horas_totales, boolean activo, @Pattern(regexp = "Basico|Intermedio|Avanzado") String nivel,
 			String categoria, @PositiveOrZero double precio, LocalDate fecha_inicio, LocalDate fecha_fin,
 			LocalDateTime fecha_creacion) {
@@ -71,7 +71,7 @@ public class Curso {
 		this.fecha_creacion = fecha_creacion;
 	}
 
-	public Curso(@NotBlank String codigo, @NotBlank String nombre, String descripcion, @Positive int horas_totales,
+	public CursoMario(@NotBlank String codigo, @NotBlank String nombre, String descripcion, @Positive int horas_totales,
 			boolean activo, @Pattern(regexp = "Basico|Intermedio|Avanzado") String nivel, String categoria,
 			@PositiveOrZero double precio, LocalDate fecha_inicio, LocalDate fecha_fin, LocalDateTime fecha_creacion) {
 		super();
@@ -89,7 +89,7 @@ public class Curso {
 		this.fecha_creacion = fecha_creacion;
 	}
 	
-	public Curso(@NotBlank String codigo, @NotBlank String nombre, String descripcion, @Positive int horas_totales,
+	public CursoMario(@NotBlank String codigo, @NotBlank String nombre, String descripcion, @Positive int horas_totales,
 			boolean activo, @Pattern(regexp = "Basico|Intermedio|Avanzado") String nivel, String categoria,
 			@PositiveOrZero double precio, LocalDate fecha_inicio, LocalDate fecha_fin) {
 		super();
