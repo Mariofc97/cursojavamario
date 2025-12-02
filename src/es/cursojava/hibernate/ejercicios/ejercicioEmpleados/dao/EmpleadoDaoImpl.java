@@ -23,6 +23,7 @@ public class EmpleadoDaoImpl implements EmpleadoDao{
 	public void guardar(Empleado empleado) {
 		// TODO Auto-generated method stub
 		session.persist(empleado);
+		//sesion.flush();
 	}
 
 	@Override
