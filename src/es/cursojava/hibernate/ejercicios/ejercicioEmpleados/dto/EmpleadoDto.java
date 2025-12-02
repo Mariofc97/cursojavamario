@@ -22,6 +22,10 @@ public class EmpleadoDto {
 		this.salario = salario;
 	}
 
+	public EmpleadoDto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public String getNif() {
 		return nif;
 	}

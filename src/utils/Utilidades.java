@@ -1,5 +1,6 @@
 package utils;
 
+import java.math.BigDecimal;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -82,5 +83,23 @@ public class Utilidades {
 		dato = scan.nextLine();
 		
 		return dato;
+	}
+	
+	public static BigDecimal pideDatoBigDecimal(String texto) {
+
+	    try {
+	        System.out.println(texto);
+	        Scanner scan = new Scanner(System.in);
+	        BigDecimal numero = scan.nextBigDecimal();
+
+	        return numero;
+
+	    } catch (Exception e) {
+	        System.out.println("Error general " + e.getMessage());
+	        System.out.println("El dato introducido debe ser un número decimal (ej: 1234.56)");
+
+	        // Volvemos a preguntar recursivamente
+	        return pideDatoBigDecimal(texto);
+	    }
 	}
 }

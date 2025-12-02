@@ -56,7 +56,11 @@ public class EmpleadoDaoImpl implements EmpleadoDao{
 	}
 	
 	public void commitTransaction() {
-		transaction.commit();
+		if (transaction != null && transaction.isActive()) {
+			transaction.commit();
+		}
+		
+		transaction = session.beginTransaction();
 	}
 
 }
