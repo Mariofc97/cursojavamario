@@ -5,20 +5,24 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
-import jakarta.validation.constraints.AssertTrue;
 
 @Entity
 @Table(name = "TB_CURSO")
@@ -27,8 +31,8 @@ public class Curso implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "curso_seq")
-    @SequenceGenerator(name = "curso_seq", sequenceName = "SEQ_CURSO", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "Id")
     private Long id; // obligatorio, PK, autoincremental
 
     @NotNull
@@ -77,6 +81,10 @@ public class Curso implements Serializable {
     @NotNull
     @Column(name = "fecha_creacion", nullable = false)
     private LocalDateTime fechaCreacion; // obligatorio, set en PrePersist
+    
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "FK_Aula")
+    private Aula aula;
 
     // Constructors
     public Curso() {
@@ -123,6 +131,29 @@ public class Curso implements Serializable {
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.fechaCreacion = fechaCreacion;
+	}
+    
+    
+
+	public Curso(Long id, @NotNull @NotBlank @Size(max = 20) String codigo,
+			@NotNull @NotBlank @Size(max = 100) String nombre, @Size(max = 1000) String descripcion,
+			@NotNull @Min(1) Integer horasTotales, @NotNull Boolean activo, @Size(max = 20) String nivel,
+			@Size(max = 50) String categoria, @PositiveOrZero BigDecimal precio, LocalDate fechaInicio,
+			LocalDate fechaFin, @NotNull LocalDateTime fechaCreacion, Aula aula) {
+		super();
+		this.id = id;
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.horasTotales = horasTotales;
+		this.activo = activo;
+		this.nivel = nivel;
+		this.categoria = categoria;
+		this.precio = precio;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+		this.fechaCreacion = fechaCreacion;
+		this.aula = aula;
 	}
 
 	// Getters and setters
@@ -222,7 +253,15 @@ public class Curso implements Serializable {
         this.fechaCreacion = fechaCreacion;
     }
 
-    // Validation for date consistency: fechaFin must be null or >= fechaInicio
+    public Aula getAula() {
+		return aula;
+	}
+
+	public void setAula(Aula aula) {
+		this.aula = aula;
+	}
+
+	// Validation for date consistency: fechaFin must be null or >= fechaInicio
     @AssertTrue(message = "fechaFin debe ser igual o posterior a fechaInicio")
     private boolean isFechaFinValida() {
         if (fechaFin == null) {
@@ -274,11 +313,13 @@ public class Curso implements Serializable {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Curso [id=" + id + ", codigo=" + codigo + ", nombre=" + nombre + ", horasTotales=" + horasTotales
-                + ", activo=" + activo + ", nivel=" + nivel + ", categoria=" + categoria + ", precio=" + precio
-                + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", fechaCreacion=" + fechaCreacion
-                + "]";
-    }
+	@Override
+	public String toString() {
+		return "Curso [id=" + id + ", codigo=" + codigo + ", nombre=" + nombre + ", descripcion=" + descripcion
+				+ ", horasTotales=" + horasTotales + ", activo=" + activo + ", nivel=" + nivel + ", categoria="
+				+ categoria + ", precio=" + precio + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin
+				+ ", fechaCreacion=" + fechaCreacion + ", aula=" + aula + "]";
+	}
+
+
 }
