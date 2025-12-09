@@ -3,7 +3,7 @@ package es.cursojava.hibernate.ejercicios.ejercicio1correccion;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-import es.cursojava.hibernate.ejercicios.ejercicio1correcion.dto.CursoDTOReq;
+import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dto.CursoDTOReq;
 import es.cursojava.hibernate.ejercicios.ejercicio1correcion.service.CursoService;
 
 public class CapaPresentacion {

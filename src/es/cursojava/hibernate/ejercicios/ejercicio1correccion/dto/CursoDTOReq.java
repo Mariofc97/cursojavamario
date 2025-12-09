@@ -1,15 +1,8 @@
-package es.cursojava.hibernate.ejercicios.ejercicio1correcion.dto;
+package es.cursojava.hibernate.ejercicios.ejercicio1correccion.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-
-import jakarta.persistence.Column;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
-import jakarta.validation.constraints.Size;
 
 public class CursoDTOReq {
 
@@ -26,9 +19,8 @@ public class CursoDTOReq {
 	private BigDecimal precio; // opcional, >= 0
 	private LocalDate fechaInicio; // opcional
 	private LocalDate fechaFin; // opcional, si existe >=
-
 	private LocalDateTime fechaCreacion; // obligatorio, set en PrePersist
-
+	private AulaDTO aulaDTO;
 	public CursoDTOReq(String codigo, String nombre, Integer horasTotales, Boolean activo,
 			LocalDateTime fechaCreacion) {
 		super();
@@ -38,6 +30,28 @@ public class CursoDTOReq {
 		this.activo = activo;
 		this.fechaCreacion = fechaCreacion;
 	}
+	
+	
+
+	public CursoDTOReq(String codigo, String nombre, String descripcion, Integer horasTotales, Boolean activo,
+			String nivel, String categoria, BigDecimal precio, LocalDate fechaInicio, LocalDate fechaFin,
+			LocalDateTime fechaCreacion, AulaDTO aulaDTO) {
+		super();
+		this.codigo = codigo;
+		this.nombre = nombre;
+		this.descripcion = descripcion;
+		this.horasTotales = horasTotales;
+		this.activo = activo;
+		this.nivel = nivel;
+		this.categoria = categoria;
+		this.precio = precio;
+		this.fechaInicio = fechaInicio;
+		this.fechaFin = fechaFin;
+		this.fechaCreacion = fechaCreacion;
+		this.aulaDTO = aulaDTO;
+	}
+
+
 
 	public CursoDTOReq(String codigo, String nombre, String descripcion, Integer horasTotales, Boolean activo,
 			String nivel, String categoria, BigDecimal precio, LocalDate fechaInicio, LocalDate fechaFin,
@@ -54,6 +68,19 @@ public class CursoDTOReq {
 		this.fechaInicio = fechaInicio;
 		this.fechaFin = fechaFin;
 		this.fechaCreacion = fechaCreacion;
+	}
+
+
+
+	
+	public AulaDTO getAulaDTO() {
+		return aulaDTO;
+	}
+
+
+
+	public void setAulaDTO(AulaDTO aulaDTO) {
+		this.aulaDTO = aulaDTO;
 	}
 
 

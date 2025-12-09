@@ -91,6 +91,12 @@
 			<artifactId>hibernate-validator</artifactId>
 			<version>8.0.1.Final</version>
 		</dependency>
+		<dependency>
+        	<groupId>org.mongodb</groupId>
+        	<artifactId>mongodb-driver-sync</artifactId>
+        	<version>4.11.0</version> <!-- o la última versión estable -->
+    	</dependency>
+		
 	</dependencies>
 
 

@@ -21,4 +21,8 @@ public interface CursoDAO {
 	public List<Curso> obtenerCursosActivos();
 	
 	public List<Curso> obtenerCursosPorNombre(String nombre);
+
+	public void asignarAula(Long cursoId, Long aulaId);
+	
+	public Curso obtenerCursoConAula(Long cursoId);
 }

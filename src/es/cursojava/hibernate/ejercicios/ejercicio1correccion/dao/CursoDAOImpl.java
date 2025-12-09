@@ -3,10 +3,13 @@ package es.cursojava.hibernate.ejercicios.ejercicio1correccion.dao;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.management.RuntimeErrorException;
+
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Aula;
 import es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Curso;
 import utils.UtilidadesHibernate;
 
@@ -118,5 +121,30 @@ public class CursoDAOImpl implements CursoDAO {
 //		}
 	return null;
 }
+
+	@Override
+	public void asignarAula(Long cursoId, Long aulaId) {
+		// TODO Auto-generated method stub
+		Curso curso = session.get(Curso.class, cursoId);
+		Aula aula = session.get(Aula.class, aulaId);
+		
+		if(curso == null) {
+			throw new RuntimeException("Curso no encontrado");
+		}
+		if(aula == null) {
+			throw new RuntimeException("Aula no encontrado");
+		}
+		
+		curso.setAula(aula);
+		
+		// Como curso esta asociado a la sesion, Hibernate detectara el cambio y despues hara el commit
+		session.merge(curso);
+	}
+
+	@Override
+	public Curso obtenerCursoConAula(Long cursoId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
