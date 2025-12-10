@@ -1,47 +1,56 @@
 package utils;
 
-import org.bson.Document;
-
-import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-import com.mongodb.client.model.Filters;
+
+import org.bson.Document;
 
 public class UtilidadesMongoDB {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+    // 1. URI de conexión (idealmente sacada de un config o variable de entorno)
+    private static final String URI =
+        "mongodb+srv://marioferron1997_db_user:wUuiP2I5QTI57EpX@cluster0.bfobsix.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-		String uri = "mongodb+srv://marioferron1997_db_user:wUuiP2I5QTI57EpX@cluster0.bfobsix.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
-		// 2. Crear cliente
-		try (MongoClient mongoClient = MongoClients.create(uri)) {
+    // 2. Cliente único para toda la app (Singleton sencillo)
+    private static final MongoClient CLIENT = MongoClients.create(URI);
 
-			// 3. Seleccionar base de datos
-			MongoDatabase database = mongoClient.getDatabase("getafemongodb");
+    // 3. Obtener una base de datos
+    public static MongoDatabase getDatabase(String dbName) {
+        return CLIENT.getDatabase(dbName);
+    }
 
-			// 4. Seleccionar colección
-			MongoCollection<Document> usuarios = database.getCollection("usuarios");
+    // 4. Obtener directamente una colección
+    public static MongoCollection<Document> getCollection(String dbName, String collectionName) {
+        return getDatabase(dbName).getCollection(collectionName);
+    }
 
-			// 5. Insertar un documento
-			Document nuevoUsuario = new Document("nombre", "Ana").append("edad", 28).append("ciudad", "Madrid");
-
-			usuarios.insertOne(nuevoUsuario);
-			System.out.println("Usuario insertado");
-
-			// 6. Leer documentos (find todos)
-			FindIterable<Document> resultados = usuarios.find();
-			for (Document doc : resultados) {
-				System.out.println(doc.toJson());
-			}
-
-			// 7. Consulta con filtro (edad >= 27)
-			System.out.println("Usuarios con edad >= 27:");
-			for (Document doc : usuarios.find(Filters.gte("edad", 27))) {
-				System.out.println(doc.toJson());
-			}
-		}
-	}
-
+    // 5. Cerrar el cliente (por ejemplo, al terminar la app)
+    public static void close() {
+        CLIENT.close();
+    }
+    
+    // esto es lo que te da mongoatlasDB
+//    public static void main(String[] args) {
+//        String connectionString = "mongodb+srv://marioferron1997_db_user:<db_password>@cluster0.bfobsix.mongodb.net/?appName=Cluster0";
+//        ServerApi serverApi = ServerApi.builder()
+//                .version(ServerApiVersion.V1)
+//                .build();
+//        MongoClientSettings settings = MongoClientSettings.builder()
+//                .applyConnectionString(new ConnectionString(connectionString))
+//                .serverApi(serverApi)
+//                .build();
+//        // Create a new client and connect to the server
+//        try (MongoClient mongoClient = MongoClients.create(settings)) {
+//            try {
+//                // Send a ping to confirm a successful connection
+//                MongoDatabase database = mongoClient.getDatabase("admin");
+//                database.runCommand(new Document("ping", 1));
+//                System.out.println("Pinged your deployment. You successfully connected to MongoDB!");
+//            } catch (MongoException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//    }
 }

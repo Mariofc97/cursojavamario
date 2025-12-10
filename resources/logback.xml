@@ -25,6 +25,10 @@
 	<logger name="org.jboss" level="ERROR" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
+		<!-- Sólo errores de Mongo -->
+	<logger name="org.mongodb" level="ERROR" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</logger>
   
 
   <!-- Nivel por defecto -->

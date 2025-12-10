@@ -1,5 +1,6 @@
 package es.cursojava.hibernate.ejercicios.ejercicio1correccion.service;
 
+import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dto.AulaDTO;
 import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dto.CursoDTOReq;
 
 public interface CursoService {
@@ -23,5 +24,11 @@ public interface CursoService {
 //
 //	}
 
-	void altaAula()
+	void altaAula(AulaDTO aulaDTO);
+	
+
+    // Enunciado:
+    void crearCursoConAula(CursoDTOReq cursoDTO, AulaDTO aulaDTO);
+
+    void asignarAula(Long cursoId, Long aulaId);
 }

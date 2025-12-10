@@ -143,8 +143,11 @@ public class CursoDAOImpl implements CursoDAO {
 
 	@Override
 	public Curso obtenerCursoConAula(Long cursoId) {
-		// TODO Auto-generated method stub
-		return null;
+	    String hql = "select c from Curso c left join fetch c.aula where c.id = :id";
+
+	    return session.createQuery(hql, Curso.class)
+	                  .setParameter("id", cursoId)
+	                  .uniqueResult();
 	}
 
 }
