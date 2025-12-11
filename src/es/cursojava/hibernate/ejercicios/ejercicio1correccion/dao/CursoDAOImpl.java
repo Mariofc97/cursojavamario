@@ -3,8 +3,6 @@ package es.cursojava.hibernate.ejercicios.ejercicio1correccion.dao;
 import java.time.LocalDate;
 import java.util.List;
 
-import javax.management.RuntimeErrorException;
-
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -74,14 +72,17 @@ public class CursoDAOImpl implements CursoDAO {
 		return query.list();
 	}
 	
-	public static void filtrarCampos() {
-		CursoDAOImpl dao = new CursoDAOImpl();
-		List<Curso> 
-		//PENDIENTE REVISAR COSAS DEL PROFESOR
-	}
+//	public static void filtrarCampos() {
+//		CursoDAOImpl dao = new CursoDAOImpl();
+//		List<Curso> 
+//		//PENDIENTE REVISAR COSAS DEL PROFESOR
+//	}
 
 	public Curso obtenerCursoPorCodigo(String codigo) {
-		return session.get(Curso.class, codigo);
+		String hql = "from Curso c where c.codigo = :codigo";
+		Query<Curso> query = session.createQuery(hql, Curso.class);
+		query.setParameter("codigo", codigo);
+		return query.uniqueResult();
 	}
 
 	// la fecha de inicio debe de ser 01/02/2025
@@ -142,12 +143,20 @@ public class CursoDAOImpl implements CursoDAO {
 	}
 
 	@Override
-	public Curso obtenerCursoConAula(Long cursoId) {
-	    String hql = "select c from Curso c left join fetch c.aula where c.id = :id";
-
-	    return session.createQuery(hql, Curso.class)
-	                  .setParameter("id", cursoId)
-	                  .uniqueResult();
+	public Curso obtenerCursoPorAulaId(Long aulaId) {
+		// TODO Auto-generated method stub
+		return null;
 	}
+
+//	@Override
+//	public Curso obtenerCursoPorAula(Long aulaId) {
+//	    String hql = "select c from Curso c left join fetch c.aula where c.id = :id";
+//
+//	    return session.createQuery(hql, Curso.class)
+//	                  .setParameter("id", aulaId)
+//	                  .uniqueResult();
+//	}
+	
+	
 
 }

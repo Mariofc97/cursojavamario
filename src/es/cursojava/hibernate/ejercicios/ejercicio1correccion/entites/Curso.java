@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -13,6 +15,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.SequenceGenerator;
@@ -85,6 +88,9 @@ public class Curso implements Serializable {
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "aula_id")
     private Aula aula;
+    
+    @OneToMany(mappedBy = "curso", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Alumno> alumnos = new ArrayList<>();
 
     // Constructors
     public Curso() {
@@ -157,11 +163,21 @@ public class Curso implements Serializable {
 	}
 
 	// Getters and setters
+	
+	
     public Long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public List<Alumno> getAlumnos() {
+		return alumnos;
+	}
+
+	public void setAlumnos(List<Alumno> alumnos) {
+		this.alumnos = alumnos;
+	}
+
+	public void setId(Long id) {
         this.id = id;
     }
 
@@ -311,6 +327,16 @@ public class Curso implements Serializable {
         } else if (!codigo.equals(other.codigo))
             return false;
         return true;
+    }
+    
+    public void addAlumno(Alumno alumno) {
+    	alumnos.add(alumno);
+    	alumno.setCurso(this);
+    }
+    
+    public void removeAlumno(Alumno alumno) {
+    	alumnos.remove(alumno);
+    	alumno.setCurso(null);
     }
 
 	@Override

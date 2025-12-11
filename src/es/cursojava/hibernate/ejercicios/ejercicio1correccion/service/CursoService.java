@@ -24,7 +24,7 @@ public interface CursoService {
 //
 //	}
 
-	void altaAula(AulaDTO aulaDTO);
+	void altaAula();
 	
 
     // Enunciado:

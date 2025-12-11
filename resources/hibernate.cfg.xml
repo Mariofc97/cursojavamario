@@ -31,6 +31,8 @@
         <!-- Entidad mapeada -->
         <mapping class = "es.cursojava.hibernate.Empresa" />
         <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Curso" />
+        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Aula" />
+        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Alumno" />
         <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioEmpleados.entities.Empleado" />
         <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioBiblioteca.Estudiante" />
         <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioBiblioteca.CarnetBiblioteca" />

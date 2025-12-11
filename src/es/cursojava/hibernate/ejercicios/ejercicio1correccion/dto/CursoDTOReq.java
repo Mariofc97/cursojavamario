@@ -20,7 +20,7 @@ public class CursoDTOReq {
 	private LocalDate fechaInicio; // opcional
 	private LocalDate fechaFin; // opcional, si existe >=
 	private LocalDateTime fechaCreacion; // obligatorio, set en PrePersist
-	private AulaDTO aulaDTO;
+	private AulaDTO codigoAula;
 	public CursoDTOReq(String codigo, String nombre, Integer horasTotales, Boolean activo,
 			LocalDateTime fechaCreacion) {
 		super();
@@ -30,27 +30,6 @@ public class CursoDTOReq {
 		this.activo = activo;
 		this.fechaCreacion = fechaCreacion;
 	}
-	
-	
-
-	public CursoDTOReq(String codigo, String nombre, String descripcion, Integer horasTotales, Boolean activo,
-			String nivel, String categoria, BigDecimal precio, LocalDate fechaInicio, LocalDate fechaFin,
-			LocalDateTime fechaCreacion, AulaDTO aulaDTO) {
-		super();
-		this.codigo = codigo;
-		this.nombre = nombre;
-		this.descripcion = descripcion;
-		this.horasTotales = horasTotales;
-		this.activo = activo;
-		this.nivel = nivel;
-		this.categoria = categoria;
-		this.precio = precio;
-		this.fechaInicio = fechaInicio;
-		this.fechaFin = fechaFin;
-		this.fechaCreacion = fechaCreacion;
-		this.aulaDTO = aulaDTO;
-	}
-
 
 
 	public CursoDTOReq(String codigo, String nombre, String descripcion, Integer horasTotales, Boolean activo,
@@ -71,16 +50,14 @@ public class CursoDTOReq {
 	}
 
 
-
-	
-	public AulaDTO getAulaDTO() {
-		return aulaDTO;
+	public AulaDTO getCodigoAula() {
+		return codigoAula;
 	}
 
 
 
-	public void setAulaDTO(AulaDTO aulaDTO) {
-		this.aulaDTO = aulaDTO;
+	public void setCodigoAula(AulaDTO codigoAula) {
+		this.codigoAula = codigoAula;
 	}
 
 

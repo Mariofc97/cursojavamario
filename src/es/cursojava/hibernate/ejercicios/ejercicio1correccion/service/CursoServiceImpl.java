@@ -1,7 +1,5 @@
 package es.cursojava.hibernate.ejercicios.ejercicio1correccion.service;
 
-import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dao.AulaDAO;
-import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dao.AulaDAOImpl;
 import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dao.CursoDAO;
 import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dao.CursoDAOImpl;
 import es.cursojava.hibernate.ejercicios.ejercicio1correccion.dto.AulaDTO;
@@ -12,11 +10,9 @@ import es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Curso;
 public class CursoServiceImpl implements CursoService {
 
     private final CursoDAO cursoDAO;
-    private final AulaDAO aulaDAO;
 
     public CursoServiceImpl() {
         this.cursoDAO = new CursoDAOImpl();
-        this.aulaDAO = new AulaDAOImpl();
     }
 
     // ========= MÉTODOS BÁSICOS =========
@@ -35,18 +31,9 @@ public class CursoServiceImpl implements CursoService {
     }
 
     @Override
-    public void altaAula(AulaDTO aulaDTO) {
-        if (aulaDTO.getCapacidad() == null || aulaDTO.getCapacidad() <= 0) {
-            throw new IllegalArgumentException("La capacidad del aula debe ser mayor que 0");
-        }
-
-        Aula aula = new Aula();
-        aula.setCodigoAula(aulaDTO.getCodigoAula());
-        aula.setCapacidad(aulaDTO.getCapacidad());
-        aula.setUbicacion(aulaDTO.getUbicacion());
-
-        aulaDAO.guardarAula(aula);
-        ((AulaDAOImpl)aulaDAO).commitTransaction();
+    public void altaAula() {
+        // No tiene mucho sentido sin parámetros...
+        throw new UnsupportedOperationException("Usa crearCursoConAula o crea un método altaAula(AulaDTO)");
     }
 
     // ========= ENUNCIADO =========
@@ -84,7 +71,7 @@ public class CursoServiceImpl implements CursoService {
 
         // 1) Validar que el aula no esté ya asignada a otro curso
         // (Necesitas un método en AulaDAO o CursoDAO, por ej: cursoDAO.obtenerCursoPorAula(aulaId))
-        Curso cursoQueYaUsaEsaAula = aulaDAO.obtenerCursoPorAulaId(aulaId);
+        Curso cursoQueYaUsaEsaAula = cursoDAO.obtenerCursoPorAulaId(aulaId);
         if (cursoQueYaUsaEsaAula != null) {
             throw new IllegalStateException("El aula ya está asignada a otro curso");
         }
@@ -93,10 +80,4 @@ public class CursoServiceImpl implements CursoService {
         cursoDAO.asignarAula(cursoId, aulaId);
         ((CursoDAOImpl)cursoDAO).commitTransaction();
     }
-
-	@Override
-	public void altaAula() {
-		// TODO Auto-generated method stub
-		
-	}
 }

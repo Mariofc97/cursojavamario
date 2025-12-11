@@ -12,6 +12,8 @@ public interface CursoDAO {
 	
 	public void eliminarCurso(Long id); 
 	
+	Curso obtenerCursoPorCodigo(String codigo);
+	
 	public void actualizarCurso(Curso curso);
 	
 	public Curso obtenerCursoPorId(Long id);
@@ -24,5 +26,7 @@ public interface CursoDAO {
 
 	public void asignarAula(Long cursoId, Long aulaId);
 	
-	public Curso obtenerCursoConAula(Long cursoId);
+	public Curso obtenerCursoPorAulaId(Long aulaId);
+	
+	void commitTransaction();
 }
