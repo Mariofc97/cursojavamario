@@ -6,7 +6,7 @@
 
         <!-- Conexión JDBC -->
         <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@//localhost:1522/XEPDB1</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@//localhost:1521/XEPDB1</property>
         <property name="hibernate.connection.username">getafe</property>
         <property name="hibernate.connection.password">password</property>
 
@@ -29,13 +29,13 @@
         drop:	Elimina el esquema sin crearlo de nuevo (raro de usar).
         create-only:	Crea el esquema al iniciar, pero no lo elimina al cerrar (Hibernate 5.5+). -->
         <!-- Entidad mapeada -->
-        <mapping class = "es.cursojava.hibernate.Empresa" />
-        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Curso" />
-        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Aula" />
-        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Alumno" />
-        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioEmpleados.entities.Empleado" />
-        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioBiblioteca.Estudiante" />
-        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioBiblioteca.CarnetBiblioteca" />
+<!--        <mapping class = "es.cursojava.hibernate.Empresa" />-->
+<!--        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Curso" />-->
+<!--        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Aula" />-->
+<!--        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicio1correccion.entites.Alumno" />-->
+        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioEmpleadosRepaso.entities.Empleado" />
+<!--        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioBiblioteca.Estudiante" />-->
+<!--        <mapping class = "es.cursojava.hibernate.ejercicios.ejercicioBiblioteca.CarnetBiblioteca" />-->
         
         
         

@@ -1,0 +1,19 @@
+package es.cursojava.hibernate.ejercicios.ejercicioEmpleadosRepaso.service;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import es.cursojava.hibernate.ejercicios.ejercicioEmpleadosRepaso.dto.EmpleadoDto;
+
+public interface EmpleadoService {
+
+	void altaEmpleado(EmpleadoDto empleadoDto);
+	
+	EmpleadoDto actualizarSalario(String nif, BigDecimal nuevoSalario);
+	
+	EmpleadoDto buscarPorNif(String nif);
+	
+	List<EmpleadoDto> listarPorDepartamento(String departamento);
+		
+	List<EmpleadoDto> listarTodos();
+}

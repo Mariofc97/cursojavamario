@@ -16,5 +16,9 @@ public interface EmpleadoDao {
 	
 	List<Empleado> buscarPorDepartamento(String departamento);
 	
+	void commitTransaction();
+
+	void rollbackTransaction();
+	
 	
 }

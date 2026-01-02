@@ -21,12 +21,17 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	}
 
 	@Override
-	public void guardar(Empleado empleado) {
-		// TODO Auto-generated method stub
-		session.persist(empleado);
-		session.flush();
-		//session.saveOrUpdate(empleado);
-	}
+	  public void guardar(Empleado empleado) {
+	    Transaction tx = null;
+	    try (Session session = UtilidadesHibernate.getSessionFactory()) {
+	      tx = session.beginTransaction();
+	      session.persist(empleado);
+	      tx.commit();
+	    } catch (Exception e) {
+	      if (tx != null) tx.rollback();
+	      throw e;
+	    }
+	  }
 
 	@Override
 	public Empleado buscarPorId(Long id) {
@@ -48,7 +53,8 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 	@Override
 	public List<Empleado> buscarTodos() {
 		// TODO Auto-generated method stub
-		return null;
+		Query<Empleado> query = session.createQuery("from Empleado", Empleado.class);
+		return query.list();
 	}
 
 	@Override
@@ -57,11 +63,13 @@ public class EmpleadoDaoImpl implements EmpleadoDao {
 		// TODO Auto-generated method stub
 		query.setParameter("dept", departamento);
 		transaction.commit();
-		return null;
+		return query.list();
 	}
 	
 	public void commitTransaction() {
-		transaction.commit();
+		if (transaction != null && transaction.isActive()) {
+			transaction.commit();
+		}
 	}
 	
 	public void rollbackTransaction() {
