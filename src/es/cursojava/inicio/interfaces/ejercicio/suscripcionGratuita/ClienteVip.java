@@ -1,8 +1,8 @@
 package es.cursojava.inicio.interfaces.ejercicio.suscripcionGratuita;
 
-public class ClienteVip extends Cliente implements SuscripcionPremium{
-	
-	String tipoFacturacion; //Mensual o anual
+public class ClienteVip extends Cliente implements SuscripcionPremium {
+
+	String tipoFacturacion; // Mensual o anual
 
 	public ClienteVip(String nombre, String tipoFacturacion) {
 		super(nombre);
@@ -20,27 +20,19 @@ public class ClienteVip extends Cliente implements SuscripcionPremium{
 	@Override
 	public void crearInformes() {
 		System.out.println("Cliente " + getNombre() + " creando informes");
-		
+
 	}
 
 	@Override
 	public void leerInformes() {
 		System.out.println("Cliente " + getNombre() + " leer informes");// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void enviarInformes() {
 		System.out.println("Cliente " + getNombre() + " enviando informes");// TODO Auto-generated method stub
-		
-	}
-
-
-
 
 	}
-
-	
-	
 
 }

@@ -4,4 +4,6 @@ public interface SuscripcionGratuita {
 	
 	public void leerInformes();
 
+	void crearInformes();
+
 }

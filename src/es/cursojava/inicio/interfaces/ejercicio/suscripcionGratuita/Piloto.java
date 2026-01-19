@@ -37,6 +37,12 @@ public class Piloto implements SuscripcionGratuita {
 		System.out.println("Piloto "+nombre +" leyendo informes");
 		
 	}
+
+	@Override
+	public void crearInformes() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

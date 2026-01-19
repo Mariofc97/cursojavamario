@@ -1,12 +1,11 @@
 package es.cursojava.inicio.metodos;
 
-import utils.Utilidades;
-
 public class TeoriaMetodos {
 
 	public static void main(String[] args) {
 		
-		int edad = Utilidades.calculaEdad(1968);
+//		int edad = Utilidades.calculaEdad(1968);
+		int edad = 28;
 		System.out.println(edad);
 		System.out.println("Empieza");
 		metodo1();
@@ -19,7 +18,7 @@ public class TeoriaMetodos {
 		System.out.println("Terminas");
 		
 		double num = metodo4();
-		ClaseMetodos1.saludo(name);
+//		ClaseMetodos1.saludo(name);
 	}
 	
 	public static void metodo1 () {

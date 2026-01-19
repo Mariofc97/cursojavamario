@@ -4,4 +4,8 @@ public interface SuscripcionPremium extends SuscripcionBasica {
 	
 	public void enviarInformes();
 
+	void leerInformes();
+
+	void crearInformes();
+
 }

@@ -1,18 +1,36 @@
 package es.cursojava.hibernate.ejercicios.ejercicio1correccion.dto;
 
 public class AlumnoDTO {
-
+	private Long id;
 	private String nombre;
 	private String email;
 	private int edad;
-	private String codigoCurso;
-	
-	public AlumnoDTO(String nombre, String email, int edad, String codigoCurso) {
+	private int codigo_curso;
+
+	public AlumnoDTO() {
+	}
+
+	public AlumnoDTO(String nombre, String email, int edad, int codigo_curso) {
 		super();
 		this.nombre = nombre;
 		this.email = email;
 		this.edad = edad;
-		this.codigoCurso = codigoCurso;
+		this.codigo_curso = codigo_curso;
+	}
+
+	public AlumnoDTO(String nombre, String email, int edad) {
+		super();
+		this.nombre = nombre;
+		this.email = email;
+		this.edad = edad;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombre() {
@@ -39,15 +57,12 @@ public class AlumnoDTO {
 		this.edad = edad;
 	}
 
-	public String getCodigoCurso() {
-		return codigoCurso;
+	public int getCodigo_curso() {
+		return codigo_curso;
 	}
 
-	public void setCodigoCurso(String codigoCurso) {
-		this.codigoCurso = codigoCurso;
+	public void setCodigo_curso(int codigo_curso) {
+		this.codigo_curso = codigo_curso;
 	}
-	
-	
-	
-	
+
 }
